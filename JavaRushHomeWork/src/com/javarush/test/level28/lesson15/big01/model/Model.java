@@ -16,21 +16,18 @@ public class Model
 
     public Model(View view, Provider... providers)
     {
-        if (providers.length == 0 || providers == null || view == null)
+        if(providers.length == 0 || view == null || providers == null)
             throw new IllegalArgumentException();
 
-        this.view = view;
         this.providers = providers;
+        this.view = view;
     }
 
     public void selectCity(String city)
     {
         List<Vacancy> vacancies = new ArrayList<>();
-
-        for (Provider provider: providers)
-        {
+        for(Provider provider : providers)
             vacancies.addAll(provider.getJavaVacancies(city));
-        }
 
         view.update(vacancies);
     }

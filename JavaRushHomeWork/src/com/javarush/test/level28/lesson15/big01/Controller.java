@@ -13,40 +13,21 @@ import java.util.Arrays;
  */
 public class Controller
 {
-    private Provider[] providers;
+
     private Model model;
 
-    public Controller (Provider... providers)
+    public Controller(Model model)
     {
-        if (providers.length == 0)
-        {
+        if (model == null)
             throw new IllegalArgumentException();
-        }
-        this.providers = providers;
+
+        this.model = model;
     }
 
-    @Override
-    public String toString()
+    public void onCitySelect(String cityName)
     {
-        return "Controller{" +
-                "providers=" + Arrays.toString(providers) +
-                '}';
+        model.selectCity(cityName);
     }
 
-    public void scan()
-    {
-        try
-        {
 
-            ArrayList<Vacancy> listVacancy = new ArrayList<Vacancy>();
-
-            for (Provider provider : providers) {
-
-                listVacancy.addAll(provider.getJavaVacancies("java киев"));
-            }
-
-            System.out.println(listVacancy.size());
-        } catch (NullPointerException e){ System.out.println(0);}
-
-    }
 }
