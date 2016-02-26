@@ -12,25 +12,24 @@ public class CashMachine
 {
     public static void main(String[] args)
     {
-
-        Locale.setDefault(Locale.ENGLISH);
-
         try {
+
+            Locale.setDefault(Locale.ENGLISH);
+
             Operation operation;
 
             do {
 
                 operation = ConsoleHelper.askOperation();
-
                 CommandExecutor.execute(operation);
             }
             while (operation != Operation.EXIT);
-        } catch (InterruptOperationException e)
-        {
-            try {
-                CommandExecutor.execute(Operation.EXIT);
-            } catch (InterruptOperationException ignore){}
         }
+        catch (InterruptOperationException e)
+        {
+
+        }
+        ConsoleHelper.printExitMessage();
     }
 
 }

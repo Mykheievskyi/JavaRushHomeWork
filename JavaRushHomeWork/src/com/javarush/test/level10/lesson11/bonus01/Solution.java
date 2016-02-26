@@ -10,33 +10,25 @@ import java.util.Map;
 Задача: Программа демонстрирует работу HashMap: вводит с клавиатуры набор пар (номер и строку), помещает их в HashMap и выводит на экран содержимое HashMap.
 */
 
-public class Solution
-{
-    HashMap<Integer, String> map;
-    Integer index;
-    String name;
+public class Solution {
 
-    public Solution()
-    {
-        this.map = new HashMap<Integer, String>();
-        map.put(index, name);
-    }
 
-    public static void main(String[] args) throws IOException
-    {
-        Solution solution = new Solution();
+    public static void main(String[] args) throws IOException {
+
+        HashMap<Integer, String> map = new HashMap<>();
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
         for (int i = 0; i < 10; i++)
         {
-            Integer index = Integer.parseInt(reader.readLine());
+            int index = Integer.parseInt(reader.readLine());
             String name = reader.readLine();
-            solution.map.put(index, name);
+            map.put(index, name);
         }
-        for (Map.Entry<Integer, String> pair : solution.map.entrySet())
-        {
-            Integer index = pair.getKey();
-            String name = pair.getValue();
-            System.out.println("Id=" + index + " Name=" + name);
+
+        for (Map.Entry<Integer, String> pair : map.entrySet()) {
+
+            System.out.println("Id=" + pair.getKey() + " Name=" + pair.getValue());
         }
     }
 }

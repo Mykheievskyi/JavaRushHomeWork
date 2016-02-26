@@ -11,22 +11,29 @@ import java.io.InputStreamReader;
 /**
  * Created by dima on 07.01.16.
  */
-public class ConsoleHelper {
+public class ConsoleHelper
+{
+
     private static BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in));
 
     public static void writeMessage(String message){
         System.out.println(message);
     }
+
     public static String readString() throws InterruptOperationException
     {
-        String message = "";
+        String message = null;
 
             try {
                 message = consoleReader.readLine();
-                if ("EXIT".equalsIgnoreCase(message.trim()))
-                    throw new InterruptOperationException();
             }
             catch (IOException e) {}
+
+            if ("exit".equalsIgnoreCase(message.trim()))
+            {
+                throw new InterruptOperationException();
+            }
+
             return message;
     }
 
@@ -55,7 +62,8 @@ public class ConsoleHelper {
                 } else {
                     writeMessage("Введены неверные данные, повторите ввод!");
                 }
-            }catch (NumberFormatException ex) {
+            }catch (NumberFormatException ex)
+            {
                 writeMessage("Введены неверные данные, повторите ввод!");
             }
         }

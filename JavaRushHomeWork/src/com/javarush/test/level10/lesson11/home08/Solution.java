@@ -17,8 +17,18 @@ public class Solution
     public static ArrayList<String>[] createList()
     {
         //напишите тут ваш код
+        ArrayList<String>[] result = new ArrayList[3];
 
-        return null;
+        for (int i = 0; i < result.length; i++)
+        {
+            result[i] = new ArrayList<String>();
+            for (int j = 0; j < result.length; j++)
+            {
+                result[i].add(i + " & " + j);
+            }
+        }
+
+        return result;
     }
 
     public static void printList(ArrayList<String>[] arrayOfStringList)

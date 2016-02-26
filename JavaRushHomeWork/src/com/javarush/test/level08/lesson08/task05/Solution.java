@@ -12,30 +12,44 @@ public class Solution
 {
     public static HashMap<String, String> createMap()
     {
-        HashMap<String, String> map = new HashMap<String, String>();
+        //напишите тут ваш код
 
-        map.put("Сметанина", "Анна");
-        map.put("Сталлоне","Сильвестр");
-        map.put("Ван дам", "Жанклод");
-        map.put("Шварц", "Арнольд");
-        map.put("Чан", "Джеки");
-        map.put("Вилис", "Смит");
-        map.put("Норрис", "Чак");
-        map.put("Лунгрен", "Адам");
-        map.put("Стэтхэм", "Адре");
-        map.put("Бандэрос ", "Сибастьян");
+        HashMap<String, String> map = new HashMap<>();
+
+
+        map.put("Фамилия", "Имя");
+        map.put("Фамилия1", "Имя");
+        map.put("Фамилия2", "Имя1");
+        map.put("Фамилия3", "Имя2");
+        map.put("Фамилия4", "Имя3");
+        map.put("Фамилия5", "Имя4");
+        map.put("Фамилия6", "Имя5");
+        map.put("Фамилия7", "Имя6");
+        map.put("Фамилия8", "Имя7");
+        map.put("Фамилия9", "Имя8");
+
 
         return map;
-
     }
 
     public static void removeTheFirstNameDuplicates(HashMap<String, String> map)
     {
-        for(Map.Entry<String, String> pair : map.entrySet())
-        {
-            String value = pair.getValue();
-            removeItemFromMapByValue(map, value);
+        //напишите тут ваш код
+
+        HashMap<String, String> duplicate = new HashMap<String, String>(map);
+
+        for (Map.Entry<String, String> pair1: duplicate.entrySet()) {
+            int count = 0;
+            for (Map.Entry<String, String> pair2: duplicate.entrySet()) {
+                if (pair1.getValue().equals(pair2.getValue())) {
+                    count++;
+                }
+                if (count > 1) {
+                    removeItemFromMapByValue(map, pair1.getValue());
+                }
+            }
         }
+
     }
 
     public static void removeItemFromMapByValue(HashMap<String, String> map, String value)

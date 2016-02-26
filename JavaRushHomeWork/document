@@ -1,0 +1,472 @@
+<!doctype html>
+<html class="no-js no-placeholder no-details hh">
+<head>
+    <script>(function(H){
+            H.className=H.className.replace(/\bno-js\b/,'js');
+            if ('open' in document.createElement('details')) H.className=H.className.replace(/\bno-details\b/,'');
+            void ('placeholder' in H.parentNode.createElement('input') ? H.className=H.className.replace(/\bno-placeholder\b/,'') : '');
+            if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) H.className += ' no-svg';
+        })(document.documentElement);
+        window.HH_STATIC_URI = '//i-m.hh.ru/';
+        window.HH_UNPACKED_TPL = false;
+        </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Вакансии (мобильная версия)</title>
+    <meta name="description" content="Огромное количество вакансий в вашем мобильном устройстве! Поиск работы, который всегда с вами.">
+    <meta name="keywords" content="вакансия,работа,зарплата,Мобильные устройства">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <link href="//i-m.hh.ru/favicon/hh/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="//i-m.hh.ru/favicon/hh/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="//i-m.hh.ru/favicon/hh/favicon-64x64.png" rel="icon" sizes="64x64" type="image/png">
+    <link rel="apple-touch-icon" sizes="76x76" href="//i-m.hh.ru/favicon/hh/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="//i-m.hh.ru/favicon/hh/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="//i-m.hh.ru/favicon/hh/touch-icon-ipad-retina.png">
+    <link rel="canonical" href="http://hh.ua/search/vacancy?text=java+%25s">
+    <meta name="msapplication-TileImage" content="//i-m.hh.ru/favicon/hh/touch-icon-ipad-retina.png">
+    <meta name="msapplication-TileColor" content="black">
+    <meta name="apple-mobile-web-app-title" content="HeadHunter">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="apple-itunes-app" content="app-id=502838820">
+    <link rel="stylesheet" media="all" charset="utf-8" href="//i-m.hh.ru/css/all-bd5dafe8.css">
+    <script src="//i-m.hh.ru/js/bh.js"></script>
+    <script>
+    window.globalVars = window.globalVars || {};
+    window.globalVars.version = '1.1.3';
+    window.globalVars.requestId = '145625597204459beb9277ed23e94ae9';
+    window.globalVars.lang = 'RU';
+    window.globalVars.siteId = '2';
+    window.globalVars.staticHost = '//i-m.hh.ru/';
+    // Используется в автотестах для определения когда проинициализировались компоненты на странице
+    window.globalVars.autotestsComponentsInitEnd = false;
+
+        window.globalVars.sentryLogging = true;
+        window.globalVars.sentryDSN = 'http://6debdf9107c64ea4a3bb06e3f63ff4a1@sentry.hh.ru/25';
+
+</script>
+    <script src="//i-m.hh.ru/js/app.packed-1ae1a335.js"></script>
+</head>
+<body>
+<div class="hintbox HH-HintBox"></div>
+<div class="page">
+    <div class="header HH-Header">
+        <button type="button" class="back-button HH-Back"> <script data-name="Components/Back" data-params="{}"></script> </button>
+        <div class="menu">
+            <script data-name="Components/Toggle" data-params="{&quot;expandClass&quot;: &quot;menu_active&quot;}"></script>
+            <a href="/account/login?display=mobile&amp;backurl=https%3A%2F%2Fm.hh.ua%2Fvacancies%3Ftext%3Djava%2B%2525s%26page%3D0" class="login-button" data-qa="menu-button">Войти</a>
+        </div>
+        <a href="/" class="header__logo" data-qa="logo-icon"></a>
+    </div>
+    <div class="content clearfix HH-Content">
+        <div class="searchbox searchbox_noborder">
+            <form method="GET" class="searchbox-form">
+                <input type="hidden" name="search_field" value="name">
+                <input type="hidden" name="search_field" value="company_name">
+                <input type="hidden" name="search_field" value="description">
+                <input type="hidden" name="currency_code" value="RUR">
+                <div class="line">
+                    <div class="line__filler">
+                        <input name="text" id="search-text" type="search" class="bloko-input HH-Search-Position" x-webkit-speech="x-webkit-speech" placeholder="Должность, зарплата, ключевые слова" value="java %s" data-qa="search-text">
+                        <script data-name="Components/Suggest" data-params="{&quot;remote&quot;: &quot;/autosuggest/v2?d=vacancy&amp;q=%QUERY%&quot;}" data-for="prev"></script>
+                    </div>
+                    <div class="line__element">
+                        <button class="bloko-button bloko-button_primary" data-qa="search-button"> <span class="bloko-icon bloko-icon_search"></span> </button>
+                    </div>
+                </div>
+            </form>
+            <a data-qa="extended-search" href="/search?text=java+%25s&amp;search_field=name&amp;search_field=company_name&amp;search_field=description&amp;currency_code=RUR&amp;page=0" class="searchbox__more">Уточнить</a>
+            <div class="searchbox__hint" data-qa="search-hint">
+                427 вакансий
+            </div>
+        </div>
+        <ul class="vacancy-list" data-qa="search-vacancy-container">
+            <li class="vacancy-list-item vacancy-list-item_premium HH-VacancyContacts-Item" id="vacancy_16040346" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/16040346">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Java developer
+                </div>
+                <div class="vacancy-list-item__city">
+                    Эстония
+                </div>
+                <div class="vacancy-list-item__company">
+                    CV Keskus OÜ&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> 18 фев </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_premium HH-VacancyContacts-Item" id="vacancy_16043534" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/16043534">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Java Software Architect
+                </div>
+                <div class="vacancy-list-item__salary" data-qa="vacancy-salary">
+                    5000—5000 USD
+                </div>
+                <div class="vacancy-list-item__city">
+                    Новосибирск
+                </div>
+                <div class="vacancy-list-item__company">
+                    Crossover&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> 18 фев </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_premium HH-VacancyContacts-Item" id="vacancy_16043535" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/16043535">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Java Software Architect
+                </div>
+                <div class="vacancy-list-item__salary" data-qa="vacancy-salary">
+                    5000—5000 USD
+                </div>
+                <div class="vacancy-list-item__city">
+                    Москва
+                </div>
+                <div class="vacancy-list-item__company">
+                    Crossover&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> 18 фев </span>
+                </div> </a></li>
+            <li class="banner-place-wrapper
+
+                               banner-place_vacancy-list-item
+                          ">
+                <div id="bid630" class="banner-place
+                    banner-place_630">
+                </div> </li>
+            <script src="//hhcdn.ru/pv?token=1456255972.076441482006346&amp;site=147&amp;regions=5&amp;type=unknown&amp;domainAreaId=115&amp;place=630&amp;callback=HH.banners.put&amp;format=json"></script>
+            <li class="vacancy-list-item vacancy-list-item_premium HH-VacancyContacts-Item" id="vacancy_16043536" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/16043536">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Java Software Architect
+                </div>
+                <div class="vacancy-list-item__salary" data-qa="vacancy-salary">
+                    5000—5000 USD
+                </div>
+                <div class="vacancy-list-item__city">
+                    Санкт-Петербург
+                </div>
+                <div class="vacancy-list-item__company">
+                    Crossover&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> 18 фев </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_standard_plus HH-VacancyContacts-Item" id="vacancy_14920784" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/14920784">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Java Software developer (Java Программист)
+                </div>
+                <div class="vacancy-list-item__city">
+                    Санкт-Петербург, м. Волковская, Волковский пр., 32
+                </div>
+                <div class="vacancy-list-item__company">
+                    HireRight&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> сегодня </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_standard HH-VacancyContacts-Item" id="vacancy_14825459" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/14825459">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Java Developer
+                </div>
+                <div class="vacancy-list-item__city">
+                    Харьков
+                </div>
+                <div class="vacancy-list-item__company">
+                    Epam Systems Ukraine&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> сегодня </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_standard HH-VacancyContacts-Item" id="vacancy_14825458" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/14825458">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Java Architect
+                </div>
+                <div class="vacancy-list-item__city">
+                    Харьков
+                </div>
+                <div class="vacancy-list-item__company">
+                    Epam Systems Ukraine&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> сегодня </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_standard_plus HH-VacancyContacts-Item" id="vacancy_15966886" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/15966886">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Java Developer
+                </div>
+                <div class="vacancy-list-item__salary" data-qa="vacancy-salary">
+                    100000—140000 руб.
+                </div>
+                <div class="vacancy-list-item__city">
+                    Москва
+                </div>
+                <div class="vacancy-list-item__company">
+                    Connect Flexi&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> сегодня </span>
+                </div> </a></li>
+            <li class="banner-place-wrapper
+
+                               banner-place_vacancy-list-item
+                          ">
+                <div id="bid505" class="banner-place
+                    banner-place_505">
+                </div> </li>
+            <script src="//hhcdn.ru/pv?token=1456255972.076441482006346&amp;site=147&amp;regions=5&amp;type=unknown&amp;domainAreaId=115&amp;place=505&amp;callback=HH.banners.put&amp;format=json"></script>
+            <li class="vacancy-list-item vacancy-list-item_standard HH-VacancyContacts-Item" id="vacancy_14835494" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/14835494">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Senior/Lead Java Developer
+                </div>
+                <div class="vacancy-list-item__city">
+                    Днепропетровск
+                </div>
+                <div class="vacancy-list-item__company">
+                    Epam Systems Ukraine&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> сегодня </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_standard HH-VacancyContacts-Item" id="vacancy_14825574" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/14825574">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Middle Java Developer
+                </div>
+                <div class="vacancy-list-item__city">
+                    Киев
+                </div>
+                <div class="vacancy-list-item__company">
+                    Epam Systems Ukraine&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> сегодня </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_standard HH-VacancyContacts-Item" id="vacancy_15999184" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/15999184">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Java Lab Manager
+                </div>
+                <div class="vacancy-list-item__city">
+                    Киев
+                </div>
+                <div class="vacancy-list-item__company">
+                    Epam Systems Ukraine&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> сегодня </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_standard HH-VacancyContacts-Item" id="vacancy_15220581" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/15220581">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Java Solution Architect
+                </div>
+                <div class="vacancy-list-item__city">
+                    Киев
+                </div>
+                <div class="vacancy-list-item__company">
+                    Epam Systems Ukraine&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> сегодня </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_standard HH-VacancyContacts-Item" id="vacancy_14825529" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/14825529">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Lead Java Developer
+                </div>
+                <div class="vacancy-list-item__city">
+                    Киев
+                </div>
+                <div class="vacancy-list-item__company">
+                    Epam Systems Ukraine&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> сегодня </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_standard HH-VacancyContacts-Item" id="vacancy_15384490" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/15384490">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Senior Java Developer
+                </div>
+                <div class="vacancy-list-item__city">
+                    Киев
+                </div>
+                <div class="vacancy-list-item__company">
+                    Epam Systems Ukraine&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> сегодня </span>
+                </div> </a></li>
+            <li class="banner-place-wrapper
+
+                               banner-place_vacancy-list-item
+                          ">
+                <div id="bid333" class="banner-place
+                    banner-place_333">
+                </div> </li>
+            <script src="//hhcdn.ru/pv?token=1456255972.076441482006346&amp;site=147&amp;regions=5&amp;type=unknown&amp;domainAreaId=115&amp;place=333&amp;callback=HH.banners.put&amp;format=json"></script>
+            <li class="vacancy-list-item vacancy-list-item_standard HH-VacancyContacts-Item" id="vacancy_14835519" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/14835519">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Senior Java Software Engineer
+                </div>
+                <div class="vacancy-list-item__city">
+                    Львов
+                </div>
+                <div class="vacancy-list-item__company">
+                    Epam Systems Ukraine&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> сегодня </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_standard HH-VacancyContacts-Item" id="vacancy_14825467" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/14825467">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Java Solution Architect
+                </div>
+                <div class="vacancy-list-item__city">
+                    Львов
+                </div>
+                <div class="vacancy-list-item__company">
+                    Epam Systems Ukraine&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> сегодня </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_standard HH-VacancyContacts-Item" id="vacancy_15672521" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/15672521">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Senior Java Engineer
+                </div>
+                <div class="vacancy-list-item__city">
+                    Киев
+                </div>
+                <div class="vacancy-list-item__company">
+                    Epam Systems Ukraine&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> сегодня </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_standard HH-VacancyContacts-Item" id="vacancy_16086265" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/16086265">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Senior Java Developer for Ciklum Solutions team
+                </div>
+                <div class="vacancy-list-item__city">
+                    Киев
+                </div>
+                <div class="vacancy-list-item__company">
+                    Ciklum&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> сегодня </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_standard HH-VacancyContacts-Item" id="vacancy_16078874" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/16078874">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Java программист
+                </div>
+                <div class="vacancy-list-item__city">
+                    Минск
+                </div>
+                <div class="vacancy-list-item__company">
+                    СТ Группа&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> вчера </span>
+                </div> </a></li>
+            <li class="vacancy-list-item vacancy-list-item_standard_plus HH-VacancyContacts-Item" id="vacancy_15854844" data-qa="search-vacancy-item"> <a class="vacancy-list-item-link
+                   " href="https://m.hh.ua/vacancy/15854844">
+                <div class="vacancy-list-item__name" data-qa="vacancy-name">
+                    Java developer
+                </div>
+                <div class="vacancy-list-item__salary" data-qa="vacancy-salary">
+                    от 90000 руб.
+                </div>
+                <div class="vacancy-list-item__city">
+                    Санкт-Петербург, м. Адмиралтейская
+                </div>
+                <div class="vacancy-list-item__company">
+                    TekLabs&nbsp;
+                    <span class="vacancy-list-item__pubdate" data-qa="vacancy-pubdate"> вчера </span>
+                </div> </a></li>
+            <script data-name="Components/VacancyContacts" data-params="{&quot;vacancyStateVisible&quot;: &quot;vacancy-list-item__contacts_visible&quot;, &quot;vacancyResponseError&quot;: &quot;Произошла ошибка. Попробуйте еще раз&quot;, &quot;vacancyTitleOnShow&quot;: &quot;Контактная информация&quot;, &quot;vacancyTitleOnHide&quot;: &quot;Скрыть&quot;, &quot;vacancyResponseError404&quot;: &quot;Произошла ошибка. Попробуйте обновить страницу&quot;}"></script>
+        </ul>
+        <div class="banner-place-wrapper
+
+                               banner-place_separated
+
+                               banner-place_full-width
+                          ">
+            <div id="bid154" class="banner-place
+                    banner-place_154">
+            </div>
+        </div>
+        <script src="//hhcdn.ru/pv?token=1456255972.076441482006346&amp;site=147&amp;regions=5&amp;type=unknown&amp;domainAreaId=115&amp;place=154&amp;callback=HH.banners.put&amp;format=json"></script>
+        <div class="paging" data-qa="paging-container">
+            <span class="paging-item paging-item_active" data-qa="paging-page">1</span>
+            <a class="paging-item" href="?text=java+%25s&amp;page=1&amp;currency_code=RUR">2</a>
+            <a class="paging-item" href="?text=java+%25s&amp;page=2&amp;currency_code=RUR">3</a>
+            <a class="paging-item" href="?text=java+%25s&amp;page=3&amp;currency_code=RUR">4</a>
+            <a class="paging-item" href="?text=java+%25s&amp;page=4&amp;currency_code=RUR">5</a>
+            <a class="paging-item paging-item_next" href="?text=java+%25s&amp;page=1&amp;currency_code=RUR" data-qa="paging-next">&nbsp;</a>
+        </div>
+    </div>
+    <div class="footer HH-Footer">
+        <div class="footer__copyright" data-qa="copyright">
+            © Группа компаний HeadHunter, 2000—2016
+        </div>
+        <ul class="footer-links">
+            <li class="footer-item"> <a class="footer-item__link" href="/catalog" data-qa="profareas">Каталог отраслей</a> </li>
+            <li class="footer-item"> <a class="footer-item__link hh-nomobile-link" href="https://m.hh.ua/vacancies?text=java+%25s&amp;nomobile=&amp;page=0" data-qa="footer-full-version"> <script data-name="Components/TrackAnalyticsEvent" data-params="{&quot;category&quot;: &quot;mobile&quot;, &quot;on&quot;: &quot;click&quot;, &quot;event&quot;: &quot;exit-to-desktop&quot;, &quot;label&quot;: &quot;footer&quot;}"></script>Полная версия</a> </li>
+        </ul>
+    </div>
+</div>
+<!--live-internet counter-->
+<script>
+            new Image().src="//counter.yadro.ru/hit;HeadHunter?t14.6;r"+escape(document.referrer)+
+                ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+
+                        (screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";h"+
+                escape(document.title.substring(0,80))+";"+Math.random()
+        </script>
+<!--/live-internet counter-->
+<!--google counter-->
+<script>
+        var _gaq = _gaq || [];_gaq.push(['main._require','inpage_linkid','//www.google-analytics.com/plugins/ga/inpage_linkid.js']),
+
+
+            _gaq.push(['main._setAccount', 'UA-2554084-1']);
+            _gaq.push(['main._setDomainName', 'none']);
+            _gaq.push(['main._setSessionCookieTimeout',3600000]);
+            _gaq.push(['main._addOrganic', 'rambler.ru','words'],
+                    ['main._addOrganic', 'nova.rambler.ru','query'],
+                    ['main._addOrganic', 'mail.ru','q'],
+                    ['main._addOrganic', 'nigma.ru','s'],
+                    ['main._addOrganic', 'search.livetool.ru','text',true],
+                    ['main._addOrganic', 'search.qip.ru','query']);
+            _gaq.push(['main._trackPageview']);
+
+            _gaq.push(['mobile._setAccount', 'UA-2554084-12']);
+            _gaq.push(['mobile._setDomainName', 'none']);
+            _gaq.push(['mobile._setSessionCookieTimeout',3600000]);
+            _gaq.push(['mobile._addOrganic', 'rambler.ru','words'],
+                    ['mobile._addOrganic', 'nova.rambler.ru','query'],
+                    ['mobile._addOrganic', 'mail.ru','q'],
+                    ['mobile._addOrganic', 'nigma.ru','s'],
+                    ['mobile._addOrganic', 'search.livetool.ru','text',true],
+                    ['mobile._addOrganic', 'search.qip.ru','query']);
+            _gaq.push(['mobile._trackPageview']);
+
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+<!--/google counter-->
+<!--bigmir counter-->
+<script type="text/javascript">
+        <!--
+            bmN=navigator,bmD=document,bmD.cookie='b=b',i=0,bs=[],bm={o:1,v:94760,s:94760,t:6,c:bmD.cookie?1:0,n:Math.round((Math.random()* 1000000)),w:0};
+            for(var f=self;f!=f.parent;f=f.parent)bm.w++;
+            try{if(bmN.plugins&&bmN.mimeTypes.length&&(x=bmN.plugins['Shockwave Flash']))bm.m=parseInt(x.description.replace(/([a-zA-Z]|\s)+/,''));
+            else for(var f=3;f<20;f++)if(eval('new ActiveXObject("ShockwaveFlash.ShockwaveFlash.'+f+'")'))bm.m=f}catch(e){;}
+            try{bm.y=bmN.javaEnabled()?1:0}catch(e){;}
+            try{bmS=screen;bm.v^=bm.d=bmS.colorDepth||bmS.pixelDepth;bm.v^=bm.r=bmS.width}catch(e){;}
+            r=bmD.referrer.replace(/^w+:\/\//,'');if(r&&r.split('/')[0]!=window.location.host){bm.f=escape(r).slice(0,400).slice(0,400);bm.v^=r.length}
+            bm.v^=window.location.href.length;for(var x in bm) if(/^[ovstcnwmydrf]$/.test(x)) bs[i++]=x+bm[x];
+            bmD.write('<sc'+'ript type="text/javascript" language="javascript" src="'+(bmD.location.protocol == 'https:' ? 'https:' : 'http:')+'//c.bigmir.net/?'+bs.join('&')+'"></sc'+'ript>');
+        //-->
+        </script>
+<noscript>
+    <img src="//c.bigmir.net/?v94760&amp;s94760&amp;t6" width="0" height="0" alt="" title="" border="0">
+</noscript>
+<!--/bigmir counter-->
+<!--comscore counter-->
+<script>
+    var _comscore = _comscore || [];
+    _comscore.push({c1: "2", c2: "9999305", c4: "http://m.hh.ua/vacancies?text=java+%25s&amp;page=0"});
+    (function() {
+        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+        el.parentNode.insertBefore(s, el);
+    })();
+</script>
+<noscript>
+    <img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=9999305&amp;c4=http%3A//m.hh.ua/vacancies%3Ftext%3Djava%2B%2525s%26page%3D0">
+</noscript>
+<!--/comscore counter-->
+</body>
+</html>

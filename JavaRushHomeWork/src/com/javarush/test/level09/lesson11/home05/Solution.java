@@ -3,6 +3,7 @@ package com.javarush.test.level09.lesson11.home05;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 
 /* Гласные и согласные буквы
 Написать программу, которая вводит с клавиатуры строку текста.
@@ -20,29 +21,33 @@ import java.util.ArrayList;
 
 public class Solution
 {
-    public static void main(String[] args) throws Exception
-    {
+    public static void main(String[] args) throws Exception {
+        //напишите тут ваш код
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String text = reader.readLine();
+        String s = reader.readLine();
 
-        char[] c = text.toCharArray();
-        ArrayList<Character> b = new ArrayList<Character>();
+        char[] ch = s.toCharArray();
+        List<Character> vowels = new ArrayList<Character>();
+        List<Character> notVowels = new ArrayList<Character>();
 
-        for(int i = 0; i < c.length; i++)
-        {
-            if (isVowel(c[i]))
-            {
-                System.out.print(c[i] + " ");
-            }
-            else
-            {
-                b.add(c[i]);
+        for (char temp : ch) {
+            if (isVowel(temp))
+                vowels.add(temp);
+            else {
+                if (!isVowel(temp))
+                    notVowels.add(temp);
             }
         }
-        System.out.println("");
-        for (int i = 0;i < c.length; i++)
-        {
-            System.out.print(b.get(i) + " ");
+
+        for (Character temp : vowels) {
+            System.out.print(temp + " ");
+        }
+
+        System.out.println(" ");
+
+        for (Character temp : notVowels) {
+            System.out.print(temp + " ");
         }
     }
 
