@@ -15,19 +15,30 @@ public class Solution
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        String sourceFileName = reader.readLine();
-        String destinationFileName = reader.readLine();
+        try
+        {
+            String sourceFileName = reader.readLine();
+            String destinationFileName = reader.readLine();
 
-        FileInputStream fileInputStream = new FileInputStream(sourceFileName);
-        FileOutputStream fileOutputStream = new FileOutputStream(destinationFileName);
+            FileInputStream fileInputStream = new FileInputStream(sourceFileName);
+            FileOutputStream fileOutputStream = new FileOutputStream(destinationFileName);
 
         while (fileInputStream.available() > 0)
         {
             int data = fileInputStream.read();
             fileOutputStream.write(data);
         }
+            fileInputStream.close();
+            fileOutputStream.close();
 
-        fileInputStream.close();
-        fileOutputStream.close();
+        } catch (FileNotFoundException e)
+        {
+            System.out.println("Файл не существует.");
+            String sourceFileName = reader.readLine();
+
+            FileInputStream fileInputStream = new FileInputStream(sourceFileName);
+        }
+
+
     }
 }
