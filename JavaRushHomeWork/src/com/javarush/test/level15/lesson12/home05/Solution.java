@@ -7,29 +7,22 @@ package com.javarush.test.level15.lesson12.home05;
 4. Исправьте модификаторы доступа конструкторов в SubSolution так, чтобы они соответствовали конструкторам класса Solution.
 */
 
-public class Solution {
+public class Solution
+{
+    public Solution(Object pub1) {}
+    public Solution(String pub2) {}
+    public Solution(Integer pub3) {}
 
-    private Solution(Boolean B){}
-    private Solution(boolean b){}
-    private Solution(String s){}
+    protected Solution(Character prot1) {}
+    protected Solution(Double prot2) {}
+    protected Solution(Exception prot3) {}
 
-    public Solution(byte b){}
-    public Solution(short s){}
-    public Solution(int i){}
+    private Solution(Number priv1) {}
+    private Solution(Boolean priv2) {}
+    private Solution(Float priv3) {}
 
-    protected Solution(long l){}
-    protected Solution(float f){}
-    protected Solution(double d){}
-
-    Solution(Short S){}
-    Solution(Integer I){}
-    Solution(Long L){}
-
-
-
-
-
-
-
+    Solution(int def1) {}
+    Solution(Byte def2) {}
+    Solution(Short def3) {}
 }
 

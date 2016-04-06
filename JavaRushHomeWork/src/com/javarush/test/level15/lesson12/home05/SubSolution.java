@@ -5,48 +5,57 @@ package com.javarush.test.level15.lesson12.home05;
  */
 public class SubSolution extends  Solution
 {
-    public SubSolution(byte b)
-    {
-        super(b);
+    private SubSolution(Number priv1) {
+        super(priv1);
     }
 
-    public SubSolution(short s)
-    {
-        super(s);
+    private SubSolution(Boolean priv2) {
+        super(priv2);
     }
 
-    public SubSolution(int i)
-    {
-        super(i);
+    private SubSolution(Float priv3) {
+        super(priv3);
     }
 
-    protected SubSolution(long l)
-    {
-        super(l);
+
+    public SubSolution(Object pub1) {
+        super(pub1);
     }
 
-    protected SubSolution(float f)
-    {
-        super(f);
+    public SubSolution(String pub2) {
+        super(pub2);
     }
 
-    protected SubSolution(double d)
-    {
-        super(d);
+    public SubSolution(Integer pub3) {
+        super(pub3);
     }
 
-    SubSolution(Short S)
-    {
-        super(S);
+
+    protected SubSolution(Character prot1) {
+        super(prot1);
     }
 
-    SubSolution(Integer I)
-    {
-        super(I);
+    protected SubSolution(Double prot2) {
+        super(prot2);
     }
 
-    SubSolution(Long L)
-    {
-        super(L);
+    protected SubSolution(Exception prot3) {
+        super(prot3);
     }
+
+
+    SubSolution(int def1) {
+        super(def1);
+    }
+
+    SubSolution(Byte def2) {
+        super(def2);
+    }
+
+    SubSolution(Short def3) {
+        super(def3);
+    }
+
+
 }
+
