@@ -53,7 +53,6 @@ public class Bankomat {
         public void run() {
             while (!isStopped) {
                 try {
-
                     account.withdraw("100");             //снимаем со счета
                 } catch (NotEnoughMoneyException e) {
                     System.out.println("Недостаточно денег");

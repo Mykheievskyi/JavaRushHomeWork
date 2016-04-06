@@ -22,7 +22,6 @@ public class BankAccount {
     }
 
     public synchronized void withdraw(BigDecimal money) throws NotEnoughMoneyException {
-
         BigDecimal newBalance = balance.subtract(money);
 
         if (newBalance.compareTo(BigDecimal.ZERO) < 0) throw new NotEnoughMoneyException();
@@ -31,8 +30,7 @@ public class BankAccount {
         System.out.println("Тратим " + money + ", на счету " + balance);
     }
 
-    public void deposit(String money) {
-        deposit(new BigDecimal(money));
+    public void deposit(String money) {deposit(new BigDecimal(money));
     }
 
     public void withdraw(String money) throws NotEnoughMoneyException {

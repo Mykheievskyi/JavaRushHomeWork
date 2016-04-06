@@ -30,26 +30,58 @@ public class Solution
 
     public class Human implements Run, Swim
     {
-        public void run() {}
-        public void swim(){}
+        @Override
+        public void run() {
+
+        }
+
+        @Override
+        public void swim() {
+
+        }
     }
 
-    public class Duck implements Swim, Fly
+    public class Duck implements Swim, Fly, Run
     {
+        @Override
+        public void run() {
 
-        public void swim(){}
-        public void fly(){}
+        }
+
+        @Override
+        public void fly() {
+
+        }
+
+        @Override
+        public void swim() {
+
+        }
     }
 
-    public class Penguin implements Swim
+    public class Penguin implements Swim, Run
     {
+        @Override
+        public void run() {
 
-        public void swim(){}
+        }
+
+        @Override
+        public void swim() {
+
+        }
     }
 
     public class Airplane implements Fly, Run
     {
-        public void run(){}
-        public void fly(){}
+        @Override
+        public void run() {
+
+        }
+
+        @Override
+        public void fly() {
+
+        }
     }
 }

@@ -23,7 +23,7 @@ public class Solution
         boolean wantGetExtraWork();
     }
 
-    interface Secretary extends Person, Workable
+    interface Secretary extends Person
     {
     }
 
@@ -57,6 +57,5 @@ public class Solution
         public void startToWork()
         {
         }
-        public boolean wantGetExtraWork(){return  true;}
     }
 }
