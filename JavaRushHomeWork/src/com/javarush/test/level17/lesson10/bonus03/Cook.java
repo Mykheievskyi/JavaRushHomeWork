@@ -33,6 +33,7 @@ public class Cook implements Runnable {
         System.out.println(String.format("Заказ будет готовиться %d мс для стола №%d", order.getTime(), order.getTableNumber()));
         Thread.sleep(order.getTime());     // готовим блюдо
         Dishes dishes = new Dishes(order.getTableNumber());       //  это готовое блюдо
+        manager.getDishesQueue().add(dishes);
         System.out.println(String.format("Заказ для стола №%d готов", dishes.getTableNumber()));
     }
 }

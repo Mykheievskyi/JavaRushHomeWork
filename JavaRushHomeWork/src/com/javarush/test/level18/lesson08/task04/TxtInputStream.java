@@ -1,5 +1,6 @@
 package com.javarush.test.level18.lesson08.task04;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -10,5 +11,14 @@ import java.io.IOException;
 Если передан не txt-файл, например, file.txt.exe, то конструктор должен выбрасывать исключение UnsupportedFileNameException
 */
 
+public class TxtInputStream extends FileInputStream {
+    public TxtInputStream(String fileName) throws FileNotFoundException, UnsupportedFileNameException
+    {
+        super(fileName);
 
+        if (!fileName.endsWith(".txt"))
+            throw new UnsupportedFileNameException();
+
+    }
+}
 

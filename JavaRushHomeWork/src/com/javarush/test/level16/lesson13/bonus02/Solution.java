@@ -1,8 +1,11 @@
 package com.javarush.test.level16.lesson13.bonus02;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.nio.Buffer;
+import java.util.ArrayList;
+import java.util.List;
 
 /* Клубок
 1. Создай 5 различных своих нитей c отличным от Thread типом:
@@ -16,97 +19,160 @@ import java.util.*;
 Подсказка: Нить 4 можно проверить методом isAlive()
 */
 
-public class Solution
-{
+public class Solution {
     public static List<Thread> threads = new ArrayList<Thread>(5);
 
-    static
-    {
-        threads.add(new LoopThreade());
-        threads.add(new ExceptionThread());
-        threads.add(new ClockThread());
-        threads.add(new MessageTread());
-        threads.add(new SumThread());
+    static {
+
+        threads.add(new ThreadOne());
+        threads.add(new ThreadTwo());
+        threads.add(new ThreadThree());
+        threads.add(new ThreadFour());
+        threads.add(new ThreadFive());
     }
 
-
-    public static class LoopThreade extends Thread
+    private static void sleep()
     {
-        public LoopThreade(){super();}
-        public void run()
+        try
         {
-            while (true){}
+            Thread.sleep(100);
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
         }
     }
 
-    public  static  class ExceptionThread extends Thread
-    {
-        public  ExceptionThread(){super();}
+
+    public static void main(String[] args){
+
+        Thread thread2 = threads.get(1);
+        thread2.start();
+        sleep();
+        thread2.interrupt();
+
+        Thread thread4 = threads.get(3);
+        Message message = (Message) thread4;
+        thread4.start();
+        sleep();
+        message.showWarning();
+        System.out.println(thread4.isAlive());
+
+    }
+
+    public static class ThreadOne extends Thread{
+
+        @Override
         public void run()
         {
-            try
+            while (true)
             {
-                while (!isInterrupted()){}
-                throw new InterruptedException();
+
             }
-            catch(InterruptedException e){System.out.println(e);}
         }
     }
 
-    public  static class  ClockThread extends Thread
-    {
-        public ClockThread(){super();}
+    public static class ThreadTwo extends Thread{
+
+        @Override
         public void run()
         {
-           try
-           {
-            while (!isInterrupted())
-            {
-                currentThread().sleep(500);
-                System.out.println("Ура");
-            }
-           }catch (InterruptedException e){}
-
-        }
-    }
-
-    public static  class MessageTread extends Thread implements Message
-    {
-        public MessageTread(){super();}
-
-
-        public void showWarning()
-        {
-            try {
-                interrupt();
-                join();
-            }
-            catch (InterruptedException e) { }
-        }
-    }
-
-    public static  class SumThread extends Thread
-    {
-        private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        private  Integer Sum;
-
-        public SumThread(){super();}
-
-        public void run()
-        {
-            try
-            {
-                while (reader.readLine() != "N")
+            try{
+                while (!isInterrupted())
                 {
-                   Sum += Integer.parseInt(reader.readLine());
+
+                }
+                throw new InterruptedException();
+            }catch (InterruptedException e)
+            {
+                System.out.println("InterruptedException");
+            }
+
+        }
+    }
+
+    public static class ThreadThree extends Thread{
+
+        @Override
+        public void run()
+        {
+            try{
+                while (true)
+                {
+                    System.out.println("Ура");
+                    Thread.sleep(500);
                 }
 
-                System.out.println(Sum);
-            }catch (Exception e){}
+            }catch (InterruptedException e)
+            {
 
+            }
         }
     }
 
+    public static class ThreadFour extends Thread implements Message{
 
+        @Override
+        public  void showWarning()
+        {
+
+            this.interrupt();
+            try
+            {
+                this.join();
+            }
+            catch(Exception e)
+            {
+
+            }
+
+        }
+
+        @Override
+        public void run()
+        {
+            Thread current = Thread.currentThread();
+            while(!current.interrupted())
+            {
+
+            }
+        }
+    }
+
+    public static class ThreadFive extends Thread {
+
+        @Override
+        public void run()
+        {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            int sum = 0;
+
+            try{
+
+                while (!isInterrupted())
+                {
+                    String s = reader.readLine();
+
+                    if (s.equals("N")) this.interrupt();
+
+                    else
+                    {
+                        int integer = Integer.parseInt(s);
+
+                        sum += integer;
+                    }
+                }
+
+                throw new InterruptedException();
+
+            }catch (IOException e)
+            {
+
+            }catch (InterruptedException e)
+            {
+                System.out.println(sum);
+            }
+
+        }
+    }
 }
-
