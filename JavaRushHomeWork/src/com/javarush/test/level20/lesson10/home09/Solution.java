@@ -11,5 +11,6 @@ import java.util.List;
 Все данные должны сохранить порядок следования.
 */
 public class Solution {
-
+    int node;
+    List<Solution> edges = new LinkedList<>();
 }
