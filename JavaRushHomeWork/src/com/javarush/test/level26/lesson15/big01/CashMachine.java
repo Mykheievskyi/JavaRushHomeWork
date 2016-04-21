@@ -10,11 +10,15 @@ import java.util.Locale;
  */
 public class CashMachine
 {
+    public static final String RESOURCE_PATH = "com.javarush.test.level26.lesson15.big01.resources.";
+
     public static void main(String[] args)
     {
-        try {
+        Locale.setDefault(Locale.ENGLISH);
 
-            Locale.setDefault(Locale.ENGLISH);
+        try
+        {
+            CommandExecutor.execute(Operation.LOGIN);
 
             Operation operation;
 
@@ -27,9 +31,9 @@ public class CashMachine
         }
         catch (InterruptOperationException e)
         {
-
+            ConsoleHelper.printExitMessage();
         }
-        ConsoleHelper.printExitMessage();
+
     }
 
 }

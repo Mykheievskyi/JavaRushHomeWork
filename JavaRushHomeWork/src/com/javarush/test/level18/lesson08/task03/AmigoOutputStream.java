@@ -12,8 +12,49 @@ import java.io.IOException;
 2.3 закрыть поток методом close()
 */
 
-public class AmigoOutputStream
-{
+public class AmigoOutputStream extends FileOutputStream {
+    public static String fileName = "C:/tmp/result.txt";
+
+    FileOutputStream fos;
+
+    public AmigoOutputStream(FileOutputStream fileOutputStream) throws FileNotFoundException
+    {
+        super(fileName);
+        this.fos = fileOutputStream;
+    }
+
+
+
+    @Override
+    public void close() throws IOException {
+        fos.flush();
+        fos.write("JavaRush © 2012-2013 All rights reserved.".getBytes());
+        fos.close();
+    }
+
+    @Override
+    public void write(int b) throws IOException {
+        fos.write(b);
+    }
+
+    @Override
+    public void write(byte[] b) throws IOException {
+        fos.write(b);
+    }
+
+    @Override
+    public void write(byte[] b, int off, int len) throws IOException {
+        fos.write(b, off, len);
+    }
+
+    @Override
+    protected void finalize() throws IOException {
+        super.finalize();
+    }
+
+    public static void main(String[] args) throws FileNotFoundException {
+        new AmigoOutputStream(new FileOutputStream(fileName));
+    }
 
 
 }

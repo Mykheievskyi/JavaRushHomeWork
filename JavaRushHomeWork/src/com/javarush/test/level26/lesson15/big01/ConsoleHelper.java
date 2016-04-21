@@ -22,17 +22,17 @@ public class ConsoleHelper
 
     public static String readString() throws InterruptOperationException
     {
-        String message = null;
+        String message = "";
 
-            try {
+            try
+            {
                 message = consoleReader.readLine();
+                if (message.equalsIgnoreCase("exit"))
+                {
+                    throw new InterruptOperationException();
+                }
             }
             catch (IOException e) {}
-
-            if ("exit".equalsIgnoreCase(message.trim()))
-            {
-                throw new InterruptOperationException();
-            }
 
             return message;
     }
@@ -69,17 +69,18 @@ public class ConsoleHelper
         }
     }
 
-    public static Operation askOperation()
-    {
+    public static Operation askOperation() throws InterruptOperationException {
         writeMessage("Выберете команду: 1 — INFO, 2 — DEPOSIT, 3 — WITHDRAW, 4 — EXIT");
-        try
+
+        while (true)
         {
-            int temp = Integer.parseInt(consoleReader.readLine());
-            return Operation.getAllowableOperationByOrdinal(temp);
-        }
-        catch (Exception e)
-        {
-            return askOperation();
+            int temp = Integer.parseInt(readString());
+            if (1 <= temp || temp <= 4)
+            {
+                return Operation.getAllowableOperationByOrdinal(temp);
+            }
+            else
+            writeMessage("invalid.data");
         }
     }
 

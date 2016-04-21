@@ -1,5 +1,6 @@
 package com.javarush.test.level19.lesson10.bonus01;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,27 +10,35 @@ import java.util.List;
 Нужно создать объединенную версию строк, записать их в список lines
 Операции ADDED и REMOVED не могут идти подряд, они всегда разделены SAME
 Пример:
-[Файл 1]
-строка1
-строка2
-строка3
+оригинальный   редактированный    общий
+file1:         file2:             результат:(lines)
 
-[Файл 2]
-строка1
-строка3
-строка4
-
-[Результат - список lines]
-SAME строка1
-REMOVED строка2
-SAME строка3
-ADDED строка4
+строка1        строка1            SAME строка1
+строка2                           REMOVED строка2
+строка3        строка3            SAME строка3
+строка4                           REMOVED строка4
+строка5        строка5            SAME строка5
+строка0                           ADDED строка0
+строка1        строка1            SAME строка1
+строка2                           REMOVED строка2
+строка3        строка3            SAME строка3
+строка5                           ADDED строка5
+строка4        строка4            SAME строка4
+строка5                           REMOVED строка5
 */
 
 public class Solution {
     public static List<LineItem> lines = new ArrayList<LineItem>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+             FileInputStream fi1 = new FileInputStream(new File(br.readLine()));
+             FileInputStream fi2 = new FileInputStream(new File(br.readLine())))
+        {
+
+
+        } catch (IOException e) {}
     }
 
 
