@@ -1,50 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="43ba4d1a-79ff-4453-aa0b-13cf3653ea1f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/command/LoginCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/javarush/test/level28/lesson15/big01/model/MoikrugStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/javarush/test/level33/lesson15/big01/ExceptionHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/javarush/test/level33/lesson15/big01/Helper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/javarush/test/level33/lesson15/big01/Shortener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/javarush/test/level33/lesson15/big01/Solution.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/javarush/test/level33/lesson15/big01/strategies/Entry.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/javarush/test/level33/lesson15/big01/strategies/FileBucket.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/javarush/test/level33/lesson15/big01/strategies/HashMapStorageStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/javarush/test/level33/lesson15/big01/strategies/OurHashMapStorageStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/javarush/test/level33/lesson15/big01/strategies/StorageStrategy.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level20/lesson10/bonus03/Solution$Word.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level20/lesson10/bonus03/Solution.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level18/lesson08/task03/AmigoOutputStream.class" afterPath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level18/lesson08/task03/AmigoOutputStream.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level19/lesson10/bonus01/Solution$LineItem.class" afterPath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level19/lesson10/bonus01/Solution$LineItem.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level19/lesson10/bonus01/Solution$Type.class" afterPath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level19/lesson10/bonus01/Solution$Type.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level19/lesson10/bonus01/Solution.class" afterPath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level19/lesson10/bonus01/Solution.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level26/lesson15/big01/CashMachine.class" afterPath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level26/lesson15/big01/CashMachine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level26/lesson15/big01/ConsoleHelper.class" afterPath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level26/lesson15/big01/ConsoleHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level26/lesson15/big01/CurrencyManipulator.class" afterPath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level26/lesson15/big01/CurrencyManipulator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level26/lesson15/big01/Operation.class" afterPath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level26/lesson15/big01/Operation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level26/lesson15/big01/command/CommandExecutor.class" afterPath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level26/lesson15/big01/command/CommandExecutor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level26/lesson15/big01/command/WithdrawCommand.class" afterPath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level26/lesson15/big01/command/WithdrawCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level28/lesson15/big01/Aggregator.class" afterPath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level28/lesson15/big01/Aggregator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level26/lesson15/big01/Условие задачи.txt" afterPath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level26/lesson15/big01/Условие задачи.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level28/lesson15/big01/view/vacancies.html" afterPath="$PROJECT_DIR$/out/production/JavaRushHomeWork/com/javarush/test/level28/lesson15/big01/view/vacancies.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/javarush/test/level18/lesson08/task03/AmigoOutputStream.java" afterPath="$PROJECT_DIR$/src/com/javarush/test/level18/lesson08/task03/AmigoOutputStream.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/javarush/test/level19/lesson10/bonus01/Solution.java" afterPath="$PROJECT_DIR$/src/com/javarush/test/level19/lesson10/bonus01/Solution.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/javarush/test/level20/lesson10/bonus03/Solution.java" afterPath="$PROJECT_DIR$/src/com/javarush/test/level20/lesson10/bonus03/Solution.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/CashMachine.java" afterPath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/CashMachine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/ConsoleHelper.java" afterPath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/ConsoleHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/CurrencyManipulator.java" afterPath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/CurrencyManipulator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/Operation.java" afterPath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/Operation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/command/CommandExecutor.java" afterPath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/command/CommandExecutor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/command/DepositCommand.java" afterPath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/command/DepositCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/command/ExitCommand.java" afterPath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/command/ExitCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/command/InfoCommand.java" afterPath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/command/InfoCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/command/WithdrawCommand.java" afterPath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/command/WithdrawCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/Условие задачи.txt" afterPath="$PROJECT_DIR$/src/com/javarush/test/level26/lesson15/big01/Условие задачи.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/javarush/test/level28/lesson15/big01/Aggregator.java" afterPath="$PROJECT_DIR$/src/com/javarush/test/level28/lesson15/big01/Aggregator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/javarush/test/level28/lesson15/big01/view/vacancies.html" afterPath="$PROJECT_DIR$/src/com/javarush/test/level28/lesson15/big01/view/vacancies.html" />
-    </list>
+    <list default="true" id="43ba4d1a-79ff-4453-aa0b-13cf3653ea1f" name="Default" comment="" />
     <ignored path="JavaRushHomeWork.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -968,7 +925,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460550152560</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary=" work commit">
+      <created>1461267666673</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1461267666673</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
