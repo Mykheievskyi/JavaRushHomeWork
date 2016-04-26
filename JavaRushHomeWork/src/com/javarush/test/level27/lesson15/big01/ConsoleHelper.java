@@ -6,7 +6,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.IllegalFormatException;
 import java.util.List;
 
 
@@ -47,7 +46,9 @@ public class ConsoleHelper
                 dishes.add(Dish.valueOf(str));
             }
             catch (IllegalArgumentException e)
-            {System.out.println(str + " is not detector");}
+            {
+                writeMessage(str + " is not detected");
+            }
         }
 
         return  dishes;

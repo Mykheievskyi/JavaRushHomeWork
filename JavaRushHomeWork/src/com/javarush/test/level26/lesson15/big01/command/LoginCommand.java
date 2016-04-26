@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 public class LoginCommand implements Command
 {
     private ResourceBundle validCreditCards = ResourceBundle.getBundle(CashMachine.RESOURCE_PATH + "verifiedCards");
+    private ResourceBundle res = ResourceBundle.getBundle(CashMachine.RESOURCE_PATH + "login_en");
 
     @Override
     public void execute() throws InterruptOperationException
@@ -19,9 +20,11 @@ public class LoginCommand implements Command
         String cardNumber;
         String pin;
 
+        ConsoleHelper.writeMessage(res.getString("before"));
+
         while (true)
         {
-            ConsoleHelper.writeMessage("Введите два числа номер кредитной карты, состоящий из 12 цифр, и пин - состоящий из 4 цифр");
+            ConsoleHelper.writeMessage(res.getString("specify.data"));
             cardNumber = ConsoleHelper.readString();
             pin = ConsoleHelper.readString();
 
@@ -29,19 +32,19 @@ public class LoginCommand implements Command
             {
                 if (validCreditCards.getString(cardNumber).equals(pin))
                 {
-                    ConsoleHelper.writeMessage("верификация прошла успешно");
+                    ConsoleHelper.writeMessage(res.getString("success.format"));
                     break;
                 }
                 else
                 {
-                    ConsoleHelper.writeMessage("не верные данные");
-                    ConsoleHelper.writeMessage("попробуйте еще раз ввести пин кредитной карты");
+                    ConsoleHelper.writeMessage(res.getString("not.verified.format"));
+                    ConsoleHelper.writeMessage(res.getString("try.again.or.exit"));
                 }
             }
             else
             {
-                ConsoleHelper.writeMessage("не верные данные");
-                ConsoleHelper.writeMessage("попробуйте еще раз ввести номер кредитной карты");
+                ConsoleHelper.writeMessage(res.getString("not.verified.format"));
+                ConsoleHelper.writeMessage(res.getString("try.again.with.details"));
             }
         }
     }
