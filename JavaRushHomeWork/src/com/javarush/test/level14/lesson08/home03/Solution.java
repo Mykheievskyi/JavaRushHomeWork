@@ -2,6 +2,7 @@ package com.javarush.test.level14.lesson08.home03;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /* User, Looser, Coder and Proger
 1. Ввести [в цикле] с клавиатуры несколько строк (ключей).
@@ -27,11 +28,55 @@ public class Solution
         Person person = null;
         String key = null;
 
-        //тут цикл по чтению ключей, пункт 1
+        ArrayList <String> p = new ArrayList<String>();
+        while (true)
         {
-        //создаем объект, пункт 2
+            key = reader.readLine();
+            if (key.equals("user"))
+            {
 
-        doWork(person); //вызываем doWork
+                p.add(key);
+            }
+
+            else if ( key.equals("looser"))
+            {
+                p.add(key);
+            }
+            else if ( key.equals("coder") )
+            {
+                p.add(key);
+            }
+            else if ( key.equals("proger"))
+            {
+                p.add(key);
+            }
+            else break;
+        }
+        for (String per : p)
+        {
+            //создаем объект, пункт 2
+            if (per.equals("user"))
+            {
+                person = new Person.User();
+
+            }
+
+            else if ( per.equals("looser"))
+            {
+                person = new Person.Looser();
+
+            }
+            else if ( per.equals("coder") )
+            {
+                person = new Person.Coder();
+
+            }
+            else if ( per.equals("proger"))
+            {
+                person = new Person.Proger();
+
+            }
+            doWork(person); //вызываем doWork
 
         }
     }
@@ -39,5 +84,21 @@ public class Solution
     public static void doWork(Person person)
     {
         // пункт 3
+        if( person instanceof Person.User)
+        {
+           ((Person.User) person).live();
+        }
+        else if (person instanceof Person.Looser)
+        {
+            ((Person.Looser) person).doNothing();
+        }
+        else if (person instanceof Person.Coder)
+        {
+            ((Person.Coder) person).coding();
+        }
+        else if (person instanceof Person.Proger)
+        {
+            ((Person.Proger) person).enjoy();
+        }
     }
 }
