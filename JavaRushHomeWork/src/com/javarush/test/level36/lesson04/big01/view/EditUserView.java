@@ -7,25 +7,18 @@ import com.javarush.test.level36.lesson04.big01.model.ModelData;
 /**
  * Created by dima on 10.05.16.
  */
-public class UsersView implements View
+public class EditUserView implements View
 {
     private Controller controller;
-
 
     @Override
     public void refresh(ModelData modelData)
     {
-        if(!modelData.isDisplayDeletedUserList()) {
-            System.out.println("All users:");
-        }
-        if (modelData.isDisplayDeletedUserList())
-        {
-            System.out.println("All deleted users:");
-        }
-        for(User user: modelData.getUsers())
-        {
-            System.out.println("\t" + user.toString());
-        }
+        System.out.println("User to be edited:");
+
+
+        System.out.println("\t" + modelData.getActiveUser().toString());
+
 
         System.out.println("===================================================");
 
@@ -36,17 +29,4 @@ public class UsersView implements View
     {
         this.controller = controller;
     }
-
-    public void fireEventShowAllUsers()
-    {
-        controller.onShowAllUsers();
-    }
-
-    public void fireEventShowDeletedUsers()
-    {
-        controller.onShowAllDeletedUsers();
-    }
-
-
-
 }
