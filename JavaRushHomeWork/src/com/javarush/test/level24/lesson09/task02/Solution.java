@@ -9,8 +9,7 @@ import java.util.*;
 /* Знания - сила!
 1. В методе sort написать компаратор для Stock:
 1.1. Первичная сортировка по name в алфавитном порядке
-1.2. Вторичная сортировка по дате без учета часов, минут, секунд (сверху самые новые), потом по прибыли
-от положительных к отрицательным
+1.2. Вторичная сортировка по дате без учета часов, минут, секунд (сверху самые новые), потом по прибыли от положительных к отрицательным
 ... open 125,64 and last 126,74 - тут прибыль = 126,74-125,64
 ... open 125,64 and last 123,43 - тут прибыль = 123,43-125,64
 2. Разобраться с *Format-ами и исправить IllegalArgumentException. Подсказка - это одна строчка.
@@ -49,10 +48,8 @@ public class Solution {
         }
     }
 
-    public static void sort(List<Stock> list)
-    {
-        Collections.sort(list, new Comparator<Stock>()
-        {
+    public static void sort(List<Stock> list) {
+        Collections.sort(list, new Comparator<Stock>() {
             public int compare(Stock stock1, Stock stock2) {
                 return 0;
             }

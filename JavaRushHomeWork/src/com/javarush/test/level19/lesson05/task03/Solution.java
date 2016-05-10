@@ -15,47 +15,48 @@ package com.javarush.test.level19.lesson05.task03;
 
 import java.io.*;
 
-public class Solution {
-    public static void main(String[] args) throws IOException
+public class Solution
+{
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        String fileSource = br.readLine();
+        String fileSave = br.readLine();
+
+        BufferedReader file = new BufferedReader(new FileReader(new File(fileSource)));
+        StringBuilder result = new StringBuilder("");
+
+        while (file.ready())
+        {
+            String [] fileLine = file.readLine().split(" ");
+
+            for (int i = 0; i < fileLine.length; i++)
+            {
+                if(isNumber(fileLine[i]))
+                {
+                   result.append(fileLine[i] + " ");
+                }
+            }
+        }
+
+        //записываем строку результата в файл
+        BufferedWriter bw = new BufferedWriter(new FileWriter(new File(fileSave)));
+
+        bw.write(result.toString());
+
+        br.close();
+        file.close();
+        bw.close();
+
+    }
+
+    //метод проверяет является ли строка числом
+    public static boolean isNumber(String str)
     {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-        FileReader fileReader = new FileReader(reader.readLine());
-        FileWriter fileWriter = new FileWriter(reader.readLine());
-
-        String text = "";
-        char  currentChar;
-
-        while (fileReader.ready())
-        {
-            currentChar = (char) fileReader.read();
-            text = text + currentChar;
+        if (str == null || str.isEmpty()) return false;
+        for (int i = 0; i < str.length(); i++) {
+            if (!Character.isDigit(str.charAt(i))) return false;
         }
-
-        String[] words = text.split(" ");
-
-        for(int m = 0; m < words.length; m++)
-        {
-            char[] chars = words[m].toCharArray();
-            int count = 0;
-            System.out.println(words[m]);
-
-            for (int n = 0; n < chars.length; n++)
-            {
-                System.out.print(chars[n] + " ");
-
-                if(chars[n]>= '0' && chars[n] <= '9') {count++;}
-            }
-            System.out.println("");
-            if(count == chars.length)
-            {
-                String s = words[m] + " ";
-                fileWriter.write(s);
-            }
-        }
-
-        reader.close();
-        fileReader.close();
-        fileWriter.close();
+        return true;
     }
 }

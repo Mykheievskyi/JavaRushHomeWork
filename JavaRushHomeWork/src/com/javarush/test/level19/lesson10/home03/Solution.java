@@ -1,12 +1,10 @@
 package com.javarush.test.level19.lesson10.home03;
 
-import javax.xml.crypto.Data;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 /* Хуан Хуанович
@@ -28,36 +26,30 @@ import java.util.List;
 public class Solution {
     public static final List<Person> PEOPLE = new ArrayList<Person>();
 
-    public static void main(String[] args) throws IOException
+    public static void main(String[] args) throws IOException, ParseException
     {
-        BufferedReader rd = new BufferedReader(new FileReader(args[0]));
+        BufferedReader br = new BufferedReader(new FileReader(new File(args[0])));
 
-        String[] symbols;
-        int sizeSymbols;
-        String personName;
-        Date personDate;
+        while (br.ready())
+        {
 
-        while (rd.ready()) {
-            symbols = rd.readLine().split(" ");
-            sizeSymbols = symbols.length;
-            personDate = new Date(Integer.parseInt(symbols[sizeSymbols - 1]), Integer.parseInt(symbols[sizeSymbols - 2]), Integer.parseInt(symbols[sizeSymbols - 3]));
-            personName = getName(symbols, sizeSymbols - 4);
-            System.out.println(personName + "       " + personDate);
-            PEOPLE.add(new Person(personName, personDate));
 
+            String [] fileLine = br.readLine().split("");
+            int size = fileLine.length;
+
+            String name = "";
+
+
+            Date date = new SimpleDateFormat("dd MM yyyy").parse(fileLine[size-3] + "-" + fileLine[size-2] + "-" + fileLine[size-1]);
+            for (int i = 0; i < size - 3; i++)
+            {
+                name += fileLine[i];
+            }
+
+            PEOPLE.add(new Person(name, date));
         }
 
-        rd.close();
-
-    }
-
-    public static String getName(String[] args, int index) {
-        StringBuilder res = new StringBuilder();
-        for (int i = 0; i <= index; i++) {
-            res.append(args[i]).append(" ");
-        }
-
-        return  res.toString();
+        br.close();
 
     }
 

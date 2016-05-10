@@ -8,8 +8,7 @@ import java.io.*;
 Метод load должен инициализировать объект данными из файла
 Метод main реализован только для вас и не участвует в тестировании
 */
-public class Solution
-{
+public class Solution {
     public static void main(String[] args) {
         //you can find your_file_name.tmp in your TMP directory or fix outputStream/inputStream according to your real file location
         //вы можете найти your_file_name.tmp в папке TMP или исправьте outputStream/inputStream в соответствии с путем к вашему реальному файлу
@@ -52,8 +51,7 @@ public class Solution
         public void save(OutputStream outputStream) throws Exception
         {
             //implement this method - реализуйте этот метод
-            ObjectOutputStream oos = new ObjectOutputStream(outputStream);
-
+            PrintWriter pw = new PrintWriter(outputStream);
 
         }
 

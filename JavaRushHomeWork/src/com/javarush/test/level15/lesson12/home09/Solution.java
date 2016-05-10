@@ -26,32 +26,46 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
 
-public class Solution
-{
-    public static List<String> optionsList = new ArrayList<>();
-
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) throws IOException {
         //add your code here
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in)))
+
+        ArrayList<String> result = new ArrayList<>();
+
+        ArrayList<String> objParametrs = new ArrayList<>();
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        String url = br.readLine();
+        String [] parameters = url.split("\\?")[1].split("&");
+
+        for (int i = 0; i < parameters.length; i++)
         {
-            String url = br.readLine();
-            String [] options = url.substring(url.indexOf('?') + 1, url.length()).split("&");
-
-            for (int i = 0; i < options.length; i++)
+            if (parameters[i].split("=")[0].equals("obj"))
             {
-                if (options[i].contains("=")) {
-                    System.out.print(options[i].substring(0, options[i].indexOf('=')) + " ");
-                }
-                else System.out.print(options[i] + " ");
+                objParametrs.add(parameters[i].split("=")[1]);
             }
-            System.out.println();
-            checkObj(options);
+            result.add(parameters[i].split("=")[0]);
+        }
+        br.close();
 
-        } catch (IOException e) {
-            e.printStackTrace();
+        for (String s : result)
+        {
+            System.out.print(s + " ");
+        }
+        System.out.println();
+
+        for (String s : objParametrs)
+        {
+            if (s.contains("."))
+            {
+                alert(Double.parseDouble(s));
+            }
+            else
+            {
+                alert(s);
+            }
         }
     }
 
@@ -61,23 +75,5 @@ public class Solution
 
     public static void alert(String value) {
         System.out.println("String " + value);
-    }
-
-    public static void  checkObj(String [] options)
-    {
-        for (int i = 0; i < options.length; i++)
-        {
-            if (options[i].trim().contains("obj"))
-            {
-                if (options[i].contains("."))
-                {
-                    alert(Double.parseDouble(options[i].substring(options[i].indexOf('=') + 1,options[i].length())));
-                }
-                else
-                {
-                    alert(options[i].substring(options[i].indexOf('=') + 1,options[i].length()));
-                }
-            }
-        }
     }
 }

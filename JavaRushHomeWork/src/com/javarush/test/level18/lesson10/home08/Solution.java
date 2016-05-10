@@ -1,6 +1,5 @@
 package com.javarush.test.level18.lesson10.home08;
 
-import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,63 +14,14 @@ import java.util.Map;
 public class Solution {
     public static Map<String, Integer> resultMap = new HashMap<String, Integer>();
 
-    public static void main(String[] args) throws IOException
-    {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String fileName;
+    public static void main(String[] args) {
 
-        while(!(fileName = reader.readLine()).equals("exit"))
-        {
-            new ReadThread(fileName).start();
-            fileName = reader.readLine();
-        }
-        reader.close();
     }
 
-    public static class ReadThread extends Thread
-    {
-
-        private String fileName;
-
-        public ReadThread( String fileName)
-        {
-            this.fileName = fileName;
+    public static class ReadThread extends Thread {
+        public ReadThread(String fileName) {
+            //implement constructor body
         }
-
-
-
-        @Override
-        public void run()
-        {
-            try
-            {
-                FileInputStream in = new FileInputStream(fileName);
-                byte[] bytes = new byte[in.available()];
-                in.read(bytes);
-
-                int[] integer = new int[256];
-
-
-                for(int i = 0; i < bytes.length; i++)
-                {
-                    integer[bytes[i]]++;
-                }
-
-                int count = 0;
-                int value = 0;
-
-                for(int i = 0; i < 256; i++)
-                {
-                    if (count < integer[i])
-                    {
-                        count = integer[i];
-                        value= i;
-                    }
-                    Solution.resultMap.put(fileName,value);
-                }
-                in.close();
-
-            }catch (IOException e){}
-        }
+        // implement file reading here - реализуйте чтение из файла тут
     }
 }

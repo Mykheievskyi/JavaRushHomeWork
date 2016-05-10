@@ -5,7 +5,8 @@ package com.javarush.test.level23.lesson04.task02;
 My name is George. I'm from the USA, Seattle.
 Используйте возможности иннер класса.
 */
-public class Solution {
+public class Solution
+{
     private String country;
     private String city;
 
@@ -24,17 +25,23 @@ public class Solution {
         return new SuperUser(name);
     }
 
-    private class SuperUser {
+    private class SuperUser
+    {
         private String name;
 
         //доступ к этому методу возможен только внутри класса Solution, т.к. модификатор иннер класса private
-        public SuperUser(String name) {
+        public SuperUser(String name)
+        {
             this.name = name;
+
         }
 
+
+
         //доступ к этому методу возможен только внутри класса Solution, т.к. модификатор иннер класса private
-        public String getDescription() {
-            return String.format("My name is %s.", this.name);
+        public String getDescription()
+        {
+            return String.format("My name is %s. I'm from %s, %s.", this.name, Solution.this.country, Solution.this.city);
         }
     }
 

@@ -44,20 +44,18 @@ public class Solution {
 
     public static class Counter extends Thread {
         @Override
-        public void run()
-        {
+        public void run() {
+            try
+            {
+                this.join(1);
+            } catch (InterruptedException e) {
+
+            }
             do {
-                synchronized (this)
-                {
+                synchronized (this) {
                     incrementCount();
                     values[getCount()]++;
                 }
-
-                try {
-                    this.join(1);
-                    //Thread.sleep(1);
-                } catch (InterruptedException e) {}
-
             } while (getCount() < 100);
         }
     }

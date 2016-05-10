@@ -1,9 +1,5 @@
 package com.javarush.test.level24.lesson04.home01;
 
-import com.javarush.test.level24.lesson04.home01.HasHeight;
-import com.javarush.test.level24.lesson04.home01.HasWidth;
-import com.javarush.test.level24.lesson04.home01.Point;
-
 /* Рефакторинг
 В классе Rectangle:
 1. Измените методы getHeight и getWidth, чтобы они возвращали HasHeight и HasWidth соответственно.
@@ -15,11 +11,11 @@ import com.javarush.test.level24.lesson04.home01.Point;
 public class Solution {
     public static void main(String[] args) {
         Rectangle rectangle = new Rectangle(1, 2, 3, 4);
-        System.out.println(getHeight(rectangle));
-        System.out.println(getWidth(rectangle));
+        //System.out.println(getHeight(rectangle));
+        //System.out.println(getWidth(rectangle));
         /////////////////////expected//////////////////
-        //System.out.println(getHeight(rectangle.castToHasHeight()));
-        //System.out.println(getWidth(rectangle.castToHasWidth()));
+        System.out.println(getHeight(rectangle.castToHasHeight()));
+        System.out.println(getWidth(rectangle.castToHasWidth()));
     }
 
     public static double getHeight(HasHeight rectangle) {
@@ -31,7 +27,8 @@ public class Solution {
     }
 
 
-    public static class Rectangle implements HasHeight, HasWidth{
+    public static class Rectangle
+    {
         private Point point1;
         private Point point2;
 
@@ -40,12 +37,27 @@ public class Solution {
             point2 = new Point(x2, y2);
         }
 
-        public double getHeight() {
-            return Math.abs(point1.getY() - point2.getY());
+        public HasHeight castToHasHeight()
+        {
+            return new  HasHeight()
+            {
+                @Override
+                public double getHeight() {
+                    return Math.abs(point1.getY() - point2.getY());
+                }
+            };
         }
 
-        public double getWidth() {
-            return Math.abs(point1.getX() - point2.getX());
+        public HasWidth castToHasWidth()
+        {
+            return new HasWidth()
+            {
+                @Override
+                public double getWidth() {
+                    return Math.abs(point1.getX() - point2.getX());
+                }
+            };
+
         }
     }
 }

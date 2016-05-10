@@ -1,8 +1,7 @@
 package com.javarush.test.level20.lesson02.task03;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /* Знакомство с properties
 В методе fillInPropertiesMap считайте имя файла с консоли и заполните карту properties данными из файла.
@@ -10,40 +9,49 @@ import java.util.Map;
 Реализуйте логику записи в файл и чтения из файла для карты properties.
 */
 public class Solution {
-    public static Map<String, String> properties = new HashMap<String,String>();
+    public static Map<String, String> properties = new HashMap<>();
+    public static Properties prop = new Properties();
 
-    public void fillInPropertiesMap()   throws IOException
+    public void fillInPropertiesMap() throws Exception {
+        //implement this method - реализуйте этот метод
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        InputStream fileProperties = new FileInputStream(br.readLine());
+
+        br.close();
+
+        load(fileProperties);
+        fileProperties.close();
+
+    }
+
+    public void save(OutputStream outputStream) throws Exception
     {
         //implement this method - реализуйте этот метод
-        BufferedReader reader = new BufferedReader( new InputStreamReader(System.in));
-        FileReader fileReader = new FileReader(new File(reader.readLine()));
 
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-        while (bufferedReader.ready())
+        if (prop.size() > 0)
         {
-            String line = bufferedReader.readLine();
-            String  text = "";
-            if(!line.startsWith("#") && !line.startsWith("!"))
-            {
-                char[] charLine = new char[line.length()];
-                for(int i = 0; i < line.length(); i++)
-                {
-                    text += charLine[i];
-                    if(charLine[i] == '=' && charLine[i] == ' ' && charLine[i] == ':')
-                    {
-                        
-                    }
-                }
-            }
+            prop.putAll(properties);
+        }
+
+        prop.store(outputStream, "");
+
+    }
+
+    public void load(InputStream inputStream) throws Exception
+    {
+        //implement this method - реализуйте этот метод
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        prop.load(inputStream);
+
+        Set<String> list = prop.stringPropertyNames();
+
+        for (String currently : list)
+        {
+            properties.put(currently, prop.getProperty(currently));
         }
     }
 
-    public void save(OutputStream outputStream) throws Exception {
-        //implement this method - реализуйте этот метод
-    }
-
-    public void load(InputStream inputStream) throws Exception {
-        //implement this method - реализуйте этот метод
-    }
 }
