@@ -1,6 +1,7 @@
 package com.javarush.test.level36.lesson04.big01.model;
 
 
+import com.javarush.test.level18.lesson08.task04.UnsupportedFileNameException;
 import com.javarush.test.level36.lesson04.big01.bean.User;
 
 import java.util.ArrayList;
@@ -33,6 +34,11 @@ public class FakeModel implements Model
     @Override
     public void loadDeletedUsers()
     {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void loadUserById(long l) {
         throw new UnsupportedOperationException();
     }
 }
