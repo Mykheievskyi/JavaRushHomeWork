@@ -13,9 +13,21 @@ public class Solution {
         Counter counter4 = new Counter();
 
         counter1.start();
+        counter1.join();
+
         counter2.start();
+        counter2.join();
+
         counter3.start();
+        counter3.join();
+
         counter4.start();
+        counter4.join();
+
+
+
+
+
 
         for (int i = 1; i <= 100; i++) {
             if (values[i] != 1) {
@@ -45,16 +57,16 @@ public class Solution {
     public static class Counter extends Thread {
         @Override
         public void run() {
-            try
-            {
-                this.join(1);
-            } catch (InterruptedException e) {
-
-            }
             do {
-                synchronized (this) {
+                synchronized (Counter.class) // this поменял  на Counter.class и добавил join'ы к каждой нити
+                {
                     incrementCount();
                     values[getCount()]++;
+                }
+
+                try {
+                    Thread.sleep(1);
+                } catch (InterruptedException e) {
                 }
             } while (getCount() < 100);
         }

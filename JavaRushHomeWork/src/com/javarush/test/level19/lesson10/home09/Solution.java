@@ -18,33 +18,50 @@ JavaRush - курсы Java онлайн
 fifth
 */
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 public class Solution {
     public static TestString testString = new TestString();
 
-    public static void main(String[] args) throws IOException
+    public static void main(String[] args)
     {
-
+        //Запоминаем настоящий PrintStream в спец.переменную
         PrintStream consoleStream = System.out;
 
+        //Создаем динамический массив
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
+        //создаем адаптер к класу PrintStream
         PrintStream stream = new PrintStream(outputStream);
 
+        //Устанавливаем адаптер как текущий System.out
         System.setOut(stream);
 
+        //вызываем функцию с sout
         testString.printSomething();
 
-        String text = outputStream.toString();
+        //Преобразовываем записанные в ByteArray данные в строку
+        String reslt = outputStream.toString();
 
+        //возвращаем System.out как было изначально
         System.setOut(consoleStream);
 
+        String[] byteArray = outputStream.toString().split("\\n");
 
+        for (int i = 0; i < byteArray.length; i++)
+        {
+            System.out.println(byteArray[i]);
+
+            if (i % 2 != 0)
+                System.out.println("JavaRush - курсы Java онлайн");
+        }
     }
 
-    public static class TestString {
-        public void printSomething() {
+    public static class TestString
+    {
+        public void printSomething()
+        {
             System.out.println("first");
             System.out.println("second");
             System.out.println("third");

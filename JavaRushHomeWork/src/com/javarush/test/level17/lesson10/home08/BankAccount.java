@@ -15,7 +15,7 @@ public class BankAccount {
         this.owner = owner;
     }
 
-    public void deposit(BigDecimal money) {
+    public synchronized void deposit(BigDecimal money) {
         BigDecimal newBalance = balance.add(money);
         System.out.println("Добавляем " + money + ", на счету " + newBalance);
         balance = newBalance;
@@ -30,7 +30,8 @@ public class BankAccount {
         System.out.println("Тратим " + money + ", на счету " + balance);
     }
 
-    public void deposit(String money) {deposit(new BigDecimal(money));
+    public void deposit(String money) {
+        deposit(new BigDecimal(money));
     }
 
     public void withdraw(String money) throws NotEnoughMoneyException {

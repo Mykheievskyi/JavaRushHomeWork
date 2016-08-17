@@ -11,29 +11,32 @@ import java.io.*;
 public class Solution {
     public static void main(String[] args) throws IOException
     {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        File file1 = new File(reader.readLine());
-        File file2 = new File(reader.readLine());
+        String file1 = br.readLine();
+        String file2 = br.readLine();
 
-        FileInputStream in1 = new FileInputStream(file1);
+        br.close();
 
-        byte[] copy = new byte[in1.available()];
+        RandomAccessFile rafFiles1 = new RandomAccessFile(file1, "rw");
+        RandomAccessFile rafFiles2 = new RandomAccessFile(file2, "r");
 
-        while (in1.available() >0)
-        {
-            in1.read(copy);
-        }
-        in1.close();
+        //создаем буфер для первого файла и считываем в него первый файл
+        byte[] bufferFile1 = new byte[(int) rafFiles1.length()];
+        rafFiles1.read(bufferFile1);
 
-        FileInputStream in2 = new FileInputStream(file2);
+        //создаем буфер для второго файла и считываем в него второй файл
+        byte[] bufferFile2 = new byte[(int) rafFiles2.length()];
+        rafFiles2.read(bufferFile2);
 
-        byte[] buf2 = new byte[in2.available()];
+        //устанавливаем курсор на нулевую позицию в файле
+        rafFiles1.seek(0);
 
+        rafFiles1.write(bufferFile2);
+        rafFiles1.write(bufferFile1);
 
-        FileOutputStream in11 = new FileOutputStream(file1);
-
-
+        rafFiles1.close();
+        rafFiles2.close();
 
     }
 }

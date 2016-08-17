@@ -1,30 +1,37 @@
 package com.javarush.test.level34.lesson08.bonus01;
 
+
+import java.lang.reflect.Method;
 import java.util.Map;
+import java.util.WeakHashMap;
 
-public class Cache<K, V>
-{
-    private Map<K, V> cache = null;   //TODO add your code here
+public class Cache<K, V> {
+    private Map<K, V> cache = new WeakHashMap<>();   //TODO add your code here
 
-    public Cache(Map<K, V> cache)
-    {
-        this.cache = cache;
+    public V getByKey(K key, Class<V> clazz) throws Exception {
+        //TODO add your code here
+
+        if (!cache.containsKey(key))
+        {
+            cache.put(key, clazz.getConstructor(key.getClass()).newInstance(key));
+        }
+        return cache.get(key);
     }
 
-    public V getByKey(K key, Class<V> clazz) throws Exception
-    {
+    public boolean put(V obj) {
         //TODO add your code here
-        return null;
-    }
+        try{
+            Method method = obj.getClass().getDeclaredMethod("getKey");
+            method.setAccessible(true);
 
-    public boolean put(V obj)
-    {
-        //TODO add your code here
+            cache.put((K) method.invoke(obj), obj);
+            return cache.containsKey((K)method.invoke(obj));
+
+        }catch (Exception e){}
         return false;
     }
 
-    public int size()
-    {
+    public int size() {
         return cache.size();
     }
 }

@@ -21,7 +21,8 @@ public class Solution {
         this.utilizator = utilizator;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         List<String> strings = new ArrayList<>();
 
         Solution solution = new Solution();
@@ -35,10 +36,12 @@ public class Solution {
         System.out.println("Count of strings is " + strings.size());
     }
 
-    public List<String> readFileContent(String path) {
+    public List<String> readFileContent(String path)
+    {
         List<String> strings = new ArrayList<>();
         Charset charset = Charset.forName("UTF-8");
         Path filePath = Paths.get(path);
+
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(path)))) {
             String sCurrentLine;
             while ((sCurrentLine = bufferedReader.readLine()) != null) {
@@ -60,7 +63,8 @@ public class Solution {
         System.out.println("inside finalize - after throwing");
     }
 
-    public static class Utilizator {
+    public static class Utilizator
+    {
         protected final UtilizatorUtil util = new UtilizatorUtil();
 
         public void dispose() {
@@ -71,13 +75,18 @@ public class Solution {
 
     public static class SpecificUtilizator extends Utilizator {
         @Override
-        public void dispose() {
-            util.throwException();
+        public void dispose()
+        {
+            try {
+                util.throwException();
+            }
+            catch (RuntimeException e){}
         }
     }
 
     public static class UtilizatorUtil {
-        public void doNothing() {
+        public void doNothing()
+        {
         }
 
         public void throwException() {

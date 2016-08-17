@@ -18,13 +18,13 @@ public class Aggregator
     {
 
         HtmlView view = new HtmlView();
-        Model model = new Model(view, new Provider[]{ new Provider(new HHStrategy()), new Provider(new MoikrugStrategy())});
+        Model model = new Model(view, new Provider[]{ new Provider(new HHStrategy())});
 
         Controller controller = new Controller(model);
 
         view.setController(controller);
 
-        view.userCitySelectEmulationMethod("junior kiev");
+        view.userCitySelectEmulationMethod("java kiev");
 
     }
 

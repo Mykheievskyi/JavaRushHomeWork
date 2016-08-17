@@ -1,9 +1,10 @@
 package com.javarush.test.level22.lesson09.task03;
 
-
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 /* Составить цепочку слов
 В методе main считайте с консоли имя файла, который содержит слова, разделенные пробелом.
@@ -21,61 +22,80 @@ import java.util.Collections;
 Амстердам Мельбурн Нью-Йорк Киев Вена
 */
 public class Solution {
-    public static void main(String[] args) throws IOException
-    {
+    public static void main(String[] args) throws IOException {
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        FileReader fileReader = new FileReader(new File(reader.readLine()));
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        //...
 
-        StringBuilder text = new StringBuilder();
-        while (bufferedReader.ready())
+        BufferedReader readerConsole = new BufferedReader(new InputStreamReader(System.in));
+
+        BufferedReader fileReader = new BufferedReader(new FileReader(new File(readerConsole.readLine())));
+
+        readerConsole.close();
+
+        List<String> words = new ArrayList<>();
+
+        while (fileReader.ready())
         {
-            text.append(bufferedReader.readLine()).append(" ");
+            words.addAll(Arrays.asList(fileReader.readLine().split(" ")));
         }
-        reader.close();
+
         fileReader.close();
-        bufferedReader.close();
 
-        String [] words = text.toString().split(" ");
-
-        StringBuilder result = getLine(words);
-
+        StringBuilder result = getLine(words.toArray(new String[words.size()]));
         System.out.println(result.toString());
     }
 
     public static StringBuilder getLine(String... words)
     {
-        ArrayList<String> wordsList = new ArrayList<>();
-        Collections.addAll(wordsList,words);
+        StringBuilder resultStringBuilder = new StringBuilder();
+        if (words == null)
+            return resultStringBuilder;
 
-        StringBuilder result = new StringBuilder();
 
-        result.append(wordsList.get(0));
-        wordsList.remove(0);
+        List<String> wordList = new ArrayList<>();
+        Collections.addAll(wordList, words);
 
-        while (wordsList.size() > 0)
+        int cycleCounter = 0;
+        while (!wordList.isEmpty())
         {
-            for (int i = 0; i < wordsList.size(); i++)
+            //находим первый случайный элемент
+            if (resultStringBuilder.toString().equals(""))
             {
-                String a = result.toString().toUpperCase().toLowerCase();
-                String b = wordsList.get(i).toUpperCase().toLowerCase();
+                int randomIndex = (int) (Math.random() * wordList.size());
+                resultStringBuilder.append(wordList.get(randomIndex));
+                wordList.remove(randomIndex);
+            }
 
-                if (a.charAt(a.length() - 1) == b.charAt(0))
-                {
-                    result.append(" ").append(wordsList.get(i));
-                    wordsList.remove(i);
-                    continue;
-                }
+            //создаём временный лист для случайного перебора оставшихся элементов
+            List<String> tempList = new ArrayList<>();
+            tempList.addAll(wordList);
+            //перебираем оставшиеся элементы в случайном порядке
+            while (!tempList.isEmpty())
+            {
+                int randomIndex = (int) (Math.random() * tempList.size());
+                String word = tempList.get(randomIndex);
 
-                if (a.charAt(0) == b.charAt(b.length() - 1))
+                if (resultStringBuilder.toString().toLowerCase().charAt(resultStringBuilder.length() - 1) ==
+                        word.toLowerCase().charAt(0))
                 {
-                    result.insert(0," ");
-                    result.insert(0, wordsList.get(i));
-                    wordsList.remove(i);
+                    resultStringBuilder.append(" ").append(word);
+                    //удаляем этот же элемент в основном листе
+                    wordList.remove(word);
                 }
+                tempList.remove(randomIndex);
+            }
+            cycleCounter++;
+
+            //если итераций уже прошло больше чем слов в изначальном списке, то повторяем всё заново
+            if (cycleCounter > words.length)
+            {
+                wordList.clear();
+                Collections.addAll(wordList, words);
+                resultStringBuilder.delete(0, resultStringBuilder.length());
+                cycleCounter = 0;
             }
         }
-          return result;
+
+        return resultStringBuilder;
     }
 }

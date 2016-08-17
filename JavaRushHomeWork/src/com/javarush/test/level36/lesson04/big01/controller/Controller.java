@@ -9,35 +9,22 @@ import com.javarush.test.level36.lesson04.big01.view.UsersView;
  */
 
 //Этот класс будет получать запрос от клиента, оповещать Модель об этом, а Модель, в свою очередь, будет обновлять ModelData-у.
-public class Controller
-{
+public class Controller {
+
     private Model model;
     private UsersView usersView;
     private EditUserView editUserView;
 
-    public void setModel(Model model) {
-        this.model = model;
-    }
 
-    //обращается к моделе и инициирует загрузку юзеров.
-    public void onShowAllUsers()
-    {
+    //methods;
+    public void onShowAllUsers() {
+        //обратиться к модели и инициировать загрузку юзеров
         model.loadUsers();
-
-        //Вью сама не умеет себя обновлять. Это делает Контроллер. Пойди в контроллер и добавь обновление данных во Вью.
+        //Вью сама не умеет себя обновлять. Это делает Контроллер. Пойди в контроллер и добавь обновление данных во Вью. Напомню, данные хранятся в Моделе
         usersView.refresh(model.getModelData());
     }
 
-    public void setUsersView(UsersView usersView)
-    {
-        this.usersView = usersView;
-    }
-
-    public void setEditUserView(EditUserView editUserView) {
-        this.editUserView = editUserView;}
-
-    public void onShowAllDeletedUsers()
-    {
+    public void onShowAllDeletedUsers() {
         model.loadDeletedUsers();
         usersView.refresh(model.getModelData());
     }
@@ -47,4 +34,30 @@ public class Controller
         editUserView.refresh(model.getModelData());
     }
 
+    public void onUserDelete(long id) {
+        model.deleteUserById(id);
+        usersView.refresh(model.getModelData());
+    }
+
+    public void onUserChange(String name, long id, int level){
+        model.changeUserData(name, id, level);
+        usersView.refresh(model.getModelData());
+    }
+
+
+
+
+
+    //setter
+    public void setModel(Model model) {
+        this.model = model;
+    }
+
+    public void setUsersView(UsersView usersView) {
+        this.usersView = usersView;
+    }
+
+    public void setEditUserView(EditUserView editUserView) {
+        this.editUserView = editUserView;
+    }
 }

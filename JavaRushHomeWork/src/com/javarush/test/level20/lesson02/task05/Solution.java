@@ -9,7 +9,8 @@ import java.io.*;
 Метод main реализован только для вас и не участвует в тестировании
 */
 public class Solution {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         //you can find your_file_name.tmp in your TMP directory or fix outputStream/inputStream according to your real file location
         //вы можете найти your_file_name.tmp в папке TMP или исправьте outputStream/inputStream в соответствии с путем к вашему реальному файлу
         try {
@@ -51,12 +52,31 @@ public class Solution {
         public void save(OutputStream outputStream) throws Exception
         {
             //implement this method - реализуйте этот метод
-            PrintWriter pw = new PrintWriter(outputStream);
 
+            PrintStream console = System.out;
+            PrintStream printStream = new PrintStream(outputStream);
+            System.setOut(printStream);
+            if (!string1.equals(null)) string1.print();
+            if (!string2.equals(null)) string2.print();
+
+            System.setOut(console);
+            printStream.close();
         }
 
-        public void load(InputStream inputStream) throws Exception {
+        public void load(InputStream inputStream) throws Exception
+        {
             //implement this method - реализуйте этот метод
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            int k = countStrings;
+            int st1 = Integer.parseInt(reader.readLine().replace("string #",""))-1;
+            countStrings =st1;
+            string1 = new String();
+            int st2 = Integer.parseInt(reader.readLine().replace("string #",""))-1;
+            countStrings = st2;
+            string2 = new String();
+            reader.close();
+            countStrings = k;
         }
     }
 

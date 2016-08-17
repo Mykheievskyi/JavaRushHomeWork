@@ -78,20 +78,7 @@ public class Model
         checkCompletion();
     }
 
-    public boolean checkWallCollision(CollisionObject gameObject, Direction direction)
-    {
-        boolean result = false;
 
-        for(Wall wall : getGameObjects().getWalls())
-        {
-            if(gameObject.isCollision(wall,direction))
-            {
-                result = true;
-                break;
-            }
-        }
-        return result;
-    }
 
     public boolean checkBoxCollision(Direction direction)
     {
@@ -155,5 +142,16 @@ public class Model
 
         if (yes)
             eventListener.levelCompleted(currentLevel);
+    }
+
+    public boolean checkWallCollision(CollisionObject gameObject, Direction direction){
+
+        for (Wall wall : gameObjects.getWalls()){
+
+            if(gameObject.isCollision(wall, direction)){
+                return true;
+            }
+        }
+        return false;
     }
 }

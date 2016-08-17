@@ -7,28 +7,29 @@ import com.javarush.test.level36.lesson04.big01.model.ModelData;
 /**
  * Created by dima on 10.05.16.
  */
-public class EditUserView implements View
-{
+public class EditUserView implements View {
+
     private Controller controller;
 
-    @Override
-    public void refresh(ModelData modelData)
+
+    public void fireEventUserDeleted(long id)
     {
-        System.out.println("User to be edited:");
+        controller.onUserDelete(id);
+    }
 
-
-        System.out.println("\t" + modelData.getActiveUser().toString());
-
-
-        System.out.println("===================================================");
-
+    public void fireEventUserChanged(String name, long id, int level) {
+        controller.onUserChange(name, id, level);
     }
 
     @Override
-    public void setController(Controller controller)
-    {
+    public void refresh(ModelData modelData) {
+        System.out.println("User to be edited:");
+        System.out.println("\t" + modelData.getActiveUser());
+        System.out.println("===================================================");
+    }
+
+    @Override
+    public void setController(Controller controller) {
         this.controller = controller;
     }
-
-
 }

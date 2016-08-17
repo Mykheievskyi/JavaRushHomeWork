@@ -13,11 +13,11 @@ public class Apartment {
         return location;
     }
 
-    public synchronized void setLocation(String location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 
-    public synchronized void revalidate(boolean isEmpty) {
+    public void revalidate(boolean isEmpty) {
         if (isEmpty)
             realEstate.up(this);
     }

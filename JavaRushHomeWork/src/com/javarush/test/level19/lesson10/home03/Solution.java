@@ -1,6 +1,9 @@
 package com.javarush.test.level19.lesson10.home03;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,31 +29,51 @@ import java.util.List;
 public class Solution {
     public static final List<Person> PEOPLE = new ArrayList<Person>();
 
-    public static void main(String[] args) throws IOException, ParseException
+    public static void main(String[] args)
     {
-        BufferedReader br = new BufferedReader(new FileReader(new File(args[0])));
+        try {
+            String fileName = args[0];
 
-        while (br.ready())
-        {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
 
-
-            String [] fileLine = br.readLine().split("");
-            int size = fileLine.length;
-
-            String name = "";
-
-
-            Date date = new SimpleDateFormat("dd MM yyyy").parse(fileLine[size-3] + "-" + fileLine[size-2] + "-" + fileLine[size-1]);
-            for (int i = 0; i < size - 3; i++)
+            while (reader.ready())
             {
-                name += fileLine[i];
+                Date date = new Date();
+                String personName = "";
+                String[] line = reader.readLine().split(" ");
+
+                for(int i = 0; i < line.length; i++)
+                {
+                    try
+                    {
+                        date = new SimpleDateFormat("dd MM yyyy").parse(line[i] + " " + line[i+1] + " " +line[i+2] + " ");
+                        break;
+                    } catch (ParseException e)
+                    {
+                        personName = personName + line[i] + " ";
+                    }
+                }
+
+                personName = removeLastChar(personName);
+
+                PEOPLE.add(new Person(personName, date));
             }
 
-            PEOPLE.add(new Person(name, date));
+            reader.close();
+
+        } catch(IOException e) {}
+
+
+
+    }
+
+    public static String removeLastChar(String s)
+    {
+        if (s == null || s.length() == 0)
+        {
+            return s;
         }
-
-        br.close();
-
+        return s.substring(0,s.length() - 1);
     }
 
 }

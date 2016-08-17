@@ -13,7 +13,8 @@ import java.util.Set;
 Метод main не участвует в тестировании.
 */
 public class Solution {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         final long deadLineTime = System.currentTimeMillis() + 5000; //waiting for 5 sec
 
         final RealEstate realEstate = new RealEstate();

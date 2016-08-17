@@ -13,13 +13,46 @@ public class Solution implements Action {
 
     private int param;
 
-    private Action solutionAction = new Action() {
+    private Action solutionAction = new Action()
+    {
         //!!!!! Changes can be here
         //!!!!! Изменения могут быть тут
+        FirstClass firstClass;
+        SecondClass secondClass;
 
-        public void someAction() {
+        public void someAction()
+        {
             //!!!!! All changes have to be here
             //!!!!! Все изменения должны быть только тут
+
+            if (param > 0)
+            {
+                firstClass = new FirstClass()
+                {
+                    @Override
+                    public Action getDependantAction()
+                    {
+                        return new Action() {
+                            @Override
+                            public void someAction() {
+
+                            }
+                        };
+                    }
+                };
+
+
+                for (int i = param; i > 0;  i--)
+                    System.out.println(param--);
+
+                firstClass.someAction();
+            }
+
+            secondClass = new SecondClass();
+            secondClass.someAction();
+
+            System.out.print(SecondClass.SPECIFIC_ACTION_FOR_ANONYMOUS_SECOND_CLASS_PARAM);
+            System.out.println(param);
         }
     };
 

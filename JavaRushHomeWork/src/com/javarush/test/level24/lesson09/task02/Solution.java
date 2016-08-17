@@ -32,7 +32,7 @@ public class Solution {
         String[] filepart = {"closed {4}", "open {2} and last {3}"};
 
         ChoiceFormat fileform = new ChoiceFormat(filelimits, filepart);
-        Format[] testFormats = {null, dateFormat, fileform};
+        Format[] testFormats = {null, null, dateFormat, fileform}; //добавил второй параметр null
         MessageFormat pattform = new MessageFormat("{0}   {1} | {5} {6}");
         pattform.setFormats(testFormats);
 
@@ -50,8 +50,38 @@ public class Solution {
 
     public static void sort(List<Stock> list) {
         Collections.sort(list, new Comparator<Stock>() {
-            public int compare(Stock stock1, Stock stock2) {
-                return 0;
+            public int compare(Stock stock1, Stock stock2)
+            {
+                int compareNames = ((String) stock1.get("name")).compareTo((String) stock2.get("name"));
+                if (compareNames != 0)
+                {
+                    return compareNames;
+                }
+                else
+                {
+                    Double change1;
+                    Double change2;
+
+                    if (stock1.containsKey("change")) {
+                        change1 = (Double) stock1.get("change");
+                    } else {
+                        change1 = (Double) stock1.get("last") - (Double)stock1.get("open");
+                    }
+
+                    if (stock2.containsKey("change")) {
+                        change2 = (Double) stock2.get("change");
+                    } else {
+                        change2 = (Double) stock2.get("last") - (Double)stock2.get("open");
+                    }
+
+                    int compareChanges = change2.compareTo(change1);
+                    if (compareChanges != 0)
+                    {
+                        return compareChanges;
+                    }
+                    else return 0;
+                }
+
             }
         });
     }

@@ -8,13 +8,14 @@ import java.util.List;
 /**
  * Created by dima on 10.05.16.
  */
-public class ModelData
-{
+public class ModelData {
 
     private List<User> users;
     private User activeUser;
     private boolean displayDeletedUserList;
 
+
+    //getters and setters
     public List<User> getUsers() {
         return users;
     }
