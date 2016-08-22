@@ -1,6 +1,6 @@
 package com.javarush.test.level33.lesson15.big01.strategies;
 
-import com.javarush.test.level32.lesson15.big01.ExceptionHandler;
+import com.javarush.test.level33.lesson15.big01.ExceptionHandler;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -40,9 +40,12 @@ public class FileBucket
     //должен сериализовывать переданный entry в файл
     public void putEntry(Entry entry)
     {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(path.toFile())))
-        {
-            oos.writeObject(entry);
+        try {
+            FileOutputStream fos = new FileOutputStream(path.toFile());
+            ObjectOutputStream outputStream = new ObjectOutputStream(fos);
+            outputStream.writeObject(entry);
+            fos.close();
+            outputStream.close();
         }
         catch (Exception e) {
             ExceptionHandler.log(e);

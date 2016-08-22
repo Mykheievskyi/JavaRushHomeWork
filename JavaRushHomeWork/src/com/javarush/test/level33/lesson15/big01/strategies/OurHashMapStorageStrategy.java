@@ -6,12 +6,12 @@ package com.javarush.test.level33.lesson15.big01.strategies;
 
 public class OurHashMapStorageStrategy implements StorageStrategy {
 
-    static final int DEFAULT_INITIAL_CAPACITY = 16;
-    static final float DEFAULT_LOAD_FACTOR = 0.75f;
-    Entry[] table = new Entry[DEFAULT_INITIAL_CAPACITY];
-    int size;
-    int threshold = (int) (DEFAULT_INITIAL_CAPACITY * DEFAULT_LOAD_FACTOR);
-    float loadFactor = DEFAULT_LOAD_FACTOR;
+    private static final int DEFAULT_INITIAL_CAPACITY = 16;
+    private static final float DEFAULT_LOAD_FACTOR = 0.75f;
+    private Entry[] table = new Entry[DEFAULT_INITIAL_CAPACITY];
+    private int size;
+    private int threshold = (int) (DEFAULT_INITIAL_CAPACITY * DEFAULT_LOAD_FACTOR);
+    private float loadFactor = DEFAULT_LOAD_FACTOR;
 
 
     int hash(Long k){

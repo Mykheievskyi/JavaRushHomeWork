@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jackson-2.7.3">
+    <CLASSES>
+      <root url="file:///Library/Java/JavaVirtualMachines/jackson-2.7.3" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file:///Library/Java/JavaVirtualMachines/jackson-2.7.3" recursive="false" />
+  </library>
+</component>
