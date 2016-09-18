@@ -19,7 +19,7 @@ public class FunctionalTest {
         String s2 = Helper.generateRandomString();
         String s3 = s1;
 
-        //олучать и сохранять идентификаторы для всех трех строк с помощью shortener
+        //получать и сохранять идентификаторы для всех трех строк с помощью shortener
         Long id1 = shortener.getId(s1);
         Long id2 = shortener.getId(s2);
         Long id3 = shortener.getId(s3);

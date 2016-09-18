@@ -13,7 +13,7 @@ public class Model
     private GameObjects gameObjects;
     private int currentLevel = 1;
     // отвечающие за загрузчик уровней
-    private LevelLoader levelLoader = new LevelLoader(Paths.get("..//res//levels.txt"));
+    private LevelLoader levelLoader = new LevelLoader(Paths.get("/Users/dima/Desktop/JavaRushHomeWork/JavaRushHomeWork/src/com/javarush/test/level34/lesson15/big01/res/levels.txt"));
     //размер ячейки игрового поля
     public static final int FIELD_SELL_SIZE = 20;
     private EventListener eventListener;
